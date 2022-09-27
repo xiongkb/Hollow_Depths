@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9ae2e98b07d014447b87017c3e201810
+guid: 81a87b71b5ebb1444bbd5297bd840a35
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jellyfish_0
+      name: Jellyfish_Idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d531bbb545e542747a6022b915b7843d
-      internalID: 78048903
+      spriteID: df5142a6f9cd36a45ad583dff781e48a
+      internalID: -1838725552
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jellyfish_1
+      name: Jellyfish_Idle_1
       rect:
         serializedVersion: 2
         x: 64
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff53292543fdeed4e822f29ec33927dd
-      internalID: 473153837
+      spriteID: 200b3b9209b29694bbfa9f7920360e77
+      internalID: 1363405031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jellyfish_2
+      name: Jellyfish_Idle_2
       rect:
         serializedVersion: 2
         x: 128
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d24290e6a8838e419b4528f7135f72b
-      internalID: 483977204
+      spriteID: fc9620713a9dd844a8f91c629c672083
+      internalID: -907842197
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jellyfish_3
+      name: Jellyfish_Idle_3
       rect:
         serializedVersion: 2
         x: 192
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65e65f093e9b923498b67a1e84988de8
-      internalID: 638257688
+      spriteID: 5d568cb540b41e24aa0b2c9df3ca778c
+      internalID: -811361920
       vertices: []
       indices: 
       edges: []
@@ -211,10 +211,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Jellyfish_1: 473153837
-      Jellyfish_2: 483977204
-      Jellyfish_3: 638257688
-      Jellyfish_0: 78048903
+      Jellyfish_Idle_3: -811361920
+      Jellyfish_Idle_1: 1363405031
+      Jellyfish_Idle_0: -1838725552
+      Jellyfish_Idle_2: -907842197
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
