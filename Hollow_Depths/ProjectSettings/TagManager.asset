@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 61539017
+    locked: 0
+  - name: Gameplay
+    uniqueID: 2594058125
+    locked: 0
+  - name: Foreground
+    uniqueID: 508121743
+    locked: 0
