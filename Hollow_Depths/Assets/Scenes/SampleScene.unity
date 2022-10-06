@@ -1112,7 +1112,7 @@ GameObject:
   - component: {fileID: 149335912}
   m_Layer: 0
   m_Name: Stairs_Teleporter 3 exit 2nd floor
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1613,7 +1613,7 @@ GameObject:
   - component: {fileID: 343143579}
   m_Layer: 0
   m_Name: Stairs_Teleporter 1 exit 1st floor
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1744,7 +1744,7 @@ GameObject:
   - component: {fileID: 372863630}
   m_Layer: 0
   m_Name: Stairs_Teleporter 4 enter 3rd floor
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2457,7 +2457,7 @@ GameObject:
   - component: {fileID: 510655008}
   m_Layer: 0
   m_Name: Stairs_Teleporter 2 enter 2nd floor
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
