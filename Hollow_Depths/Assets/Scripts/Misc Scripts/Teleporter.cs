@@ -16,7 +16,7 @@ public class Teleporter : MonoBehaviour {
     {
         if (trig != null)
         {
-            if (Input.GetButtonDown("Teleport"))
+            if (Input.GetButtonDown("Horizontal"))
             {
                 trig.gameObject.transform.position = sp2.gameObject.transform.position;
 

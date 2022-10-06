@@ -1112,7 +1112,7 @@ GameObject:
   - component: {fileID: 149335912}
   m_Layer: 0
   m_Name: Stairs_Teleporter 3 exit 2nd floor
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1408,7 +1408,7 @@ GameObject:
   - component: {fileID: 218089337}
   m_Layer: 0
   m_Name: Nami
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1613,7 +1613,7 @@ GameObject:
   - component: {fileID: 343143579}
   m_Layer: 0
   m_Name: Stairs_Teleporter 1 exit 1st floor
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1744,7 +1744,7 @@ GameObject:
   - component: {fileID: 372863630}
   m_Layer: 0
   m_Name: Stairs_Teleporter 4 enter 3rd floor
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2454,10 +2454,9 @@ GameObject:
   - component: {fileID: 510655006}
   - component: {fileID: 510655007}
   - component: {fileID: 510655009}
-  - component: {fileID: 510655008}
   m_Layer: 0
   m_Name: Stairs_Teleporter 2 enter 2nd floor
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2529,20 +2528,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &510655008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 510655005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd3d6eff3d1e1846b6009ccbd6ac7f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sp1: {fileID: 510655005}
-  sp2: {fileID: 343143576}
 --- !u!61 &510655009
 BoxCollider2D:
   m_ObjectHideFlags: 0
