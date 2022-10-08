@@ -524,6 +524,7 @@ GameObject:
   - component: {fileID: 132792027}
   - component: {fileID: 132792029}
   - component: {fileID: 132792028}
+  - component: {fileID: 132792030}
   m_Layer: 0
   m_Name: Net Canon
   m_TagString: Untagged
@@ -624,6 +625,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &132792030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132792026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4786437af3613564da56639e20323213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Item
+  itemID: 5
+  destroyOnUse: 0
 --- !u!1 &143432609
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,7 +1100,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218089334}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.6, y: -2.45, z: 0}
+  m_LocalPosition: {x: 12.29, y: 0.25, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1865,6 +1881,7 @@ GameObject:
   - component: {fileID: 484261080}
   - component: {fileID: 484261082}
   - component: {fileID: 484261081}
+  - component: {fileID: 484261083}
   m_Layer: 0
   m_Name: Key 3rd floor
   m_TagString: Untagged
@@ -1965,6 +1982,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &484261083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484261079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4786437af3613564da56639e20323213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Key
+  itemID: 4
+  destroyOnUse: 0
 --- !u!1001 &504555454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3594,6 +3626,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1332294623}
   - component: {fileID: 1332294624}
+  - component: {fileID: 1332294625}
   m_Layer: 0
   m_Name: Key 1st floor
   m_TagString: Untagged
@@ -3668,6 +3701,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1332294625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332294622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4786437af3613564da56639e20323213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Key
+  itemID: 2
+  destroyOnUse: 0
 --- !u!1 &1386626842
 GameObject:
   m_ObjectHideFlags: 0
@@ -4377,6 +4425,7 @@ GameObject:
   - component: {fileID: 1632914409}
   - component: {fileID: 1632914411}
   - component: {fileID: 1632914410}
+  - component: {fileID: 1632914412}
   m_Layer: 0
   m_Name: Key 2nd floor
   m_TagString: Untagged
@@ -4477,6 +4526,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1632914412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632914408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4786437af3613564da56639e20323213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Key
+  itemID: 3
+  destroyOnUse: 0
 --- !u!1 &1671680274
 GameObject:
   m_ObjectHideFlags: 0
@@ -5235,6 +5299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1956150994}
   - component: {fileID: 1956150993}
+  - component: {fileID: 1956150995}
   m_Layer: 0
   m_Name: Shrimp_Cooler
   m_TagString: Untagged
@@ -5309,6 +5374,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1956150995
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956150992}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1966134315
 GameObject:
   m_ObjectHideFlags: 0
