@@ -1069,7 +1069,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218089334}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.52, y: -1.28, z: 0}
+  m_LocalPosition: {x: 18.01, y: 6.77, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1119,7 +1119,7 @@ MonoBehaviour:
   isAudioEnabled: 1
   disabled: 0
   canJump: 1
-  jumpForce: 6
+  jumpForce: 7
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
   useRayCastJumping: 0
@@ -2039,11 +2039,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8832851164334123735, guid: 37f85a79b535f4b4aabadb6efa124bd9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.129002
+      value: 18.22
       objectReference: {fileID: 0}
     - target: {fileID: 8832851164334123735, guid: 37f85a79b535f4b4aabadb6efa124bd9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.9155855
+      value: 8.69
       objectReference: {fileID: 0}
     - target: {fileID: 8832851164334123735, guid: 37f85a79b535f4b4aabadb6efa124bd9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3384,8 +3384,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1039932882}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.9, y: 6.5426, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalPosition: {x: 15.9, y: 6.0643, z: 0}
+  m_LocalScale: {x: 2.5, y: 1.7524999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1275170312}
@@ -5145,7 +5145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1632914408}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.43, y: 11.54, z: 0}
+  m_LocalPosition: {x: 18.12, y: 9.71, z: 0}
   m_LocalScale: {x: 0.5, y: 0.602, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
