@@ -1069,7 +1069,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218089334}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.77, y: -2.48, z: 0}
+  m_LocalPosition: {x: -6.44, y: -2.581, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2775,10 +2775,8 @@ MonoBehaviour:
   currentTrigger: {fileID: 0}
   invisSprite: {fileID: 21300000, guid: f6d586390ae254848893255ab957f711, type: 3}
   speakerSpriteList:
-  - name: Chibi
-    sprite: {fileID: 78048903, guid: 9ae2e98b07d014447b87017c3e201810, type: 3}
-  - name: Knight
-    sprite: {fileID: -1231998485, guid: 79276d2b699c21040b05af8192e7e62e, type: 3}
+  - name: Nami
+    sprite: {fileID: 246555351, guid: 331cd27dc6243ad49bc7143f6114fa4c, type: 3}
   speakerSpriteNames: []
   freezePlayerOnDialogue: 1
 --- !u!1001 &706227281
@@ -7553,8 +7551,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 661, y: 109}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -743, y: -13.75}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &965006867137501424
 CanvasRenderer:
@@ -7603,7 +7601,7 @@ RectTransform:
   m_GameObject: {fileID: 965006867137501427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8542187, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 965006867136485851}
@@ -7615,7 +7613,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.2, y: -398.7}
+  m_AnchoredPosition: {x: -1.4535002, y: -398.7}
   m_SizeDelta: {x: 1413.3281, y: 172.50238}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &965006867137501427
