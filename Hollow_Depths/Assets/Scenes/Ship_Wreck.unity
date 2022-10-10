@@ -1069,7 +1069,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218089334}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.61, y: -2.51, z: 0}
+  m_LocalPosition: {x: -8.77, y: -2.48, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2771,9 +2771,9 @@ MonoBehaviour:
   speaker: {fileID: 965006867136485850}
   continueImage: {fileID: 965006869209760901}
   isScrollingText: 1
-  typeSpeed: 0.5
+  typeSpeed: 0.01
   currentTrigger: {fileID: 0}
-  invisSprite: {fileID: 0}
+  invisSprite: {fileID: 21300000, guid: f6d586390ae254848893255ab957f711, type: 3}
   speakerSpriteList: []
   speakerSpriteNames: []
   freezePlayerOnDialogue: 1
@@ -3071,7 +3071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextFileAsset: {fileID: 4900000, guid: 861957e087c752e49ba2d1cdb36282e7, type: 3}
   waitTime: 0.5
-  singleUseDialogue: 0
+  singleUseDialogue: 1
   hasBeenUsed: 0
 --- !u!61 &855562021
 BoxCollider2D:
