@@ -1,0 +1,2 @@
+[NAME=Nami][SPEAKERSPRITE=Nami](This shelf is blocking my way and I can't get past it.)
+[NAME=Nami][SPEAKERSPRITE=Nami](I saw an axe earlier. I think I can use the hammer to break it open.)
