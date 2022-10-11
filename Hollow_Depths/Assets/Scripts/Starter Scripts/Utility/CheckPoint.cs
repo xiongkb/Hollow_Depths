@@ -2,43 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckPoint : MonoBehaviour
-{
-    //This is a component that we put on an object with collision to act as a checkpoint for the player
-    //This REQUIRES a gamemanager be set in the world if you want it to work properly
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            GameManager temp = FindObjectOfType<GameManager>();
-            if (temp != null)
-            {
-                temp.SetNewRespawnPlace(collision.gameObject);
-            }
-            else
-            {
-                Debug.Log("Checkpoint: ERROR no GameManager found!");
-            }
-            Destroy(gameObject);
-        }
-    }
+public class Checkpoint : MonoBehaviour {
+    // Attach this to your checkpoints. Checkpoints should have a collider 2D set to trigger.
+    // If you want to make a sprite animate on activating the checkpoint, let me know! It shouldn't be too hard to program.
+    private GameObject respawn;
+    private bool activated = false;
+	
+	void Start () {
+        respawn = GameObject.FindGameObjectWithTag("Respawn");
+	}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (!activated)
         {
-            GameManager temp = FindObjectOfType<GameManager>();
-            if (temp != null)
+            if (collision.CompareTag("Player"))
             {
-                temp.SetNewRespawnPlace(collision.gameObject);
+                respawn.transform.position = transform.position;
             }
-            else
-            {
-                Debug.Log("Checkpoint: ERROR no GameManager found!");
-            }
-            Destroy(gameObject);
         }
     }
-
 
 }
