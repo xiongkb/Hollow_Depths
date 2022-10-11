@@ -79,6 +79,13 @@ public class Player_Health_Segmented : MonoBehaviour {
         {
             TakeDamage();
         }
+
+        //===My code to have already been damage at the beginning
+        if (collision.collider.CompareTag("BeginTut"))
+        {
+            TakeDamage();
+            Destroy(collision.gameObject);
+        }
     }
 
     private void TakeDamage()
