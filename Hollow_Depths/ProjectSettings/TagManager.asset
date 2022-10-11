@@ -8,6 +8,7 @@ TagManager:
   - Death
   - Health
   - CheckPoint
+  - BeginTut
   layers:
   - Default
   - TransparentFX
