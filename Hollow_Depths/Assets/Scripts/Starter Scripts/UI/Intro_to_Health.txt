@@ -1,0 +1,4 @@
+[NAME=Nami][SPEAKERSPRITE=Nami]Ow... what happened to everyone?
+[NAME=Nami][SPEAKERSPRITE=Nami]*Gasp* Water is leaking?
+[NAME=Nami][SPEAKERSPRITE=Nami]I have to get out of here!
+[NAME=Nami][SPEAKERSPRITE=Nami](I see a first aid kit over there, I should go heal myself first.)

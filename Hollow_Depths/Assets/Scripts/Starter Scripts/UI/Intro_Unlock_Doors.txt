@@ -1,0 +1,1 @@
+[NAME=Nami][SPEAKERSPRITE=Nami]The door is locked. I need the key to open it.
