@@ -19,6 +19,7 @@ public class Player_Oxygen_Segmented : MonoBehaviour {
 
   //  public Text scoreText;
     // Feel free to add more! You'll need to edit the script in a few spots, though.
+    public GameObject health4;
     public GameObject health3;
     public GameObject health2;
     public GameObject health1;
@@ -92,7 +93,11 @@ public class Player_Oxygen_Segmented : MonoBehaviour {
     {
         // For more health, copy the if block for health3, change health3 to whatever yours is,
         // then change the if statement for health3 to else if
-        if (health3.activeInHierarchy)
+        if (health4.activeInHierarchy)
+        {
+            health4.SetActive(false);
+        }
+        else if (health3.activeInHierarchy)
         {
             health3.SetActive(false);
         }
@@ -117,12 +122,17 @@ public class Player_Oxygen_Segmented : MonoBehaviour {
         {
             health3.SetActive(true);
         }
+        else if (!health4.activeInHierarchy)
+        {
+            health3.SetActive(true);
+        }
         // For more health, just copy the else if block for health3 and change the name.
     }
 
     public void Respawn()
     {
         // For more health, just add another similar line here.
+        health4.SetActive(true);
         health3.SetActive(true);
         health2.SetActive(true);
         health1.SetActive(true);
