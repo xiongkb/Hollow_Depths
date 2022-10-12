@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d1550831a390f4bb5b4d9ce1bdf55758
+guid: 21af73488e9a74cd8bf3fa2a72dc651a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Nami_Idle_0
+      name: Nami_Jump 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 037cc90308d0d401881bec89a12bbe59
-      internalID: -57904062
+      spriteID: 89f29279a8eaf4c018d401b11762004f
+      internalID: 1754191742
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nami_Idle_1
+      name: Nami_Jump 1_1
       rect:
         serializedVersion: 2
         x: 64
@@ -140,8 +140,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9611d0362e1004ac68e7602032e5e2ce
-      internalID: -291938102
+      spriteID: 9558d8761653b48db82b07e2747644f5
+      internalID: -910529836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nami_Jump 1_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2af2046c8ee984a84a470fcf5aab6600
+      internalID: 69494803
       vertices: []
       indices: 
       edges: []
@@ -157,8 +178,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Nami_Idle_0: -57904062
-      Nami_Idle_1: -291938102
+      Nami_Jump 1_2: 69494803
+      Nami_Jump 1_0: 1754191742
+      Nami_Jump 1_1: -910529836
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
