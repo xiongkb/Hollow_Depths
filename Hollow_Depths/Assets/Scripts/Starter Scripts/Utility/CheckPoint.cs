@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Checkpoint : MonoBehaviour {
+public class CheckPoint : MonoBehaviour {
     // Attach this to your checkpoints. Checkpoints should have a collider 2D set to trigger.
     // If you want to make a sprite animate on activating the checkpoint, let me know! It shouldn't be too hard to program.
     private GameObject respawn;
