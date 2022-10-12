@@ -65,7 +65,7 @@ public class Player_Oxygen_Segmented : MonoBehaviour {
         {
             Respawn();
         }
-        else if (collision.CompareTag("Health"))
+        else if (collision.CompareTag("Oxygen"))
         {
             AddHealth();
             Destroy(collision.gameObject);
@@ -124,7 +124,7 @@ public class Player_Oxygen_Segmented : MonoBehaviour {
         }
         else if (!health4.activeInHierarchy)
         {
-            health3.SetActive(true);
+            health4.SetActive(true);
         }
         // For more health, just copy the else if block for health3 and change the name.
     }
