@@ -10,6 +10,7 @@ TagManager:
   - CheckPoint
   - BeginTut
   - Oxygen
+  - UnderWater
   layers:
   - Default
   - TransparentFX
