@@ -29,6 +29,10 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("This should be checked if your character has Multi-Directional movement (IE up, down, left, right) and your animator is set up accordingly")]
     public bool isMultiDirectional = false;
 
+    // KC: changing player movment speed when underwater
+    public float underWaterSpeed = 3f;
+
+
     [Tooltip("If you want audio to be used alongside this object")]
     public bool isAudioEnabled = true;
 
@@ -93,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
                 else if(!useRayCastJumping && !isJumping)
                 {
                     rb.velocity = Vector2.up * jumpForce;
-                    isJumping = true;
+                  //  isJumping = true;
                     HandleJumpAudio();
                 }
             }
@@ -204,8 +208,8 @@ public class PlayerMovement : MonoBehaviour
 
     #region Movement
 
-    //Kang Attempt to Swim Movement + Trigger
-    private void OnTriggerEnter2D(Collider2D collision)
+    //KC: Attempt to Swim Movement + Trigger
+  private void OnTriggerEnter2D(Collider2D collision)
     {
        if (collision.CompareTag("UnderWater"))
        {
@@ -214,9 +218,10 @@ public class PlayerMovement : MonoBehaviour
             //change to use the player multiDirectional movement and disable jump(side scroller?)
             isMultiDirectional = true;
             canJump = false;
+            canRayCastJump = true;
 
             //change gravity
-            rb.gravityScale = 0;
+            rb.gravityScale = 0.2f;
 
            // Debug.Log("Gravity");
            // Debug.Log("Nami touched the water collision trigger which is: " + collision);
@@ -224,7 +229,7 @@ public class PlayerMovement : MonoBehaviour
        }
     }
 
-    //Kang Swim exit when Nami is out of the water collision area to reset mack to regular movment
+    //KC: Swim exit when Nami is out of the water collision area to reset mack to regular movment
     private void OnTriggerExit2D(Collider2D collision) {
 
         if (collision.gameObject.tag == "UnderWater")
@@ -232,6 +237,7 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Left the Water area");
             isMultiDirectional = false;
             canJump = true;
+            canRayCastJump = false;
             rb.gravityScale = 1;
         }
     
@@ -250,7 +256,10 @@ public class PlayerMovement : MonoBehaviour
         float ScaledSpeed = PlayerMovementSpeed * Time.deltaTime;//Make this bad boi frame independent
         if (!canJump)
         {
-            transform.Translate(inputVector * ScaledSpeed);
+            //transform.Translate(inputVector * ScaledSpeed);
+
+            //KC: commented out the above to use the below. Calculation to stop vertical acceleration forces(?)  but can still sink
+            rb.velocity = new Vector2(HorizontalMovement * PlayerMovementSpeed, rb.velocity.y + (VerticleMovement * underWaterSpeed * Time.deltaTime));
         }
         else
         {
