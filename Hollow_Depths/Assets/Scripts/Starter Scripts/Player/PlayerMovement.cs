@@ -221,7 +221,7 @@ public class PlayerMovement : MonoBehaviour
             canRayCastJump = true;
 
             //change gravity
-            rb.gravityScale = 0.2f;
+            rb.gravityScale = 0.1f;
 
            // Debug.Log("Gravity");
            // Debug.Log("Nami touched the water collision trigger which is: " + collision);
