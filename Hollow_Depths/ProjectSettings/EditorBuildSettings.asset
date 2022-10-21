@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Game_Start.unity
+    guid: 4f8b2658bbad04559b118a152f75daf3
+  - enabled: 1
     path: Assets/Scenes/Ship_Wreck.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
