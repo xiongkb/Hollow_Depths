@@ -11,6 +11,7 @@ TagManager:
   - BeginTut
   - Oxygen
   - UnderWater
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -20,8 +21,8 @@ TagManager:
   - UI
   - 
   - Ground
-  - 
-  - 
+  - NoJump
+  - Jump
   - 
   - 
   - 

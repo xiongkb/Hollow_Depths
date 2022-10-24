@@ -26,11 +26,11 @@ public class EnemyHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out DamageDealer damageValues))
+        if (collision.gameObject.TryGetComponent(out Weapon weapon))
         {
-            if (damageValues.damageType == DamageDealer.DamageType.Player)
+            if (weapon.alignmnent == Weapon.Alignment.Player)
             {
-                DecreaseHealth(damageValues.DamageValue);
+                DecreaseHealth(weapon.damageValue);
                 if (currentHealth == 0)
                 {
                     Destroy(this.gameObject);//If this enemy reaches 0 health, they are straight up destroyed. 

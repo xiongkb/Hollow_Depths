@@ -5,69 +5,66 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    public enum Alignment
+    {
+        Player,
+        Enemy,
+        Environment
+    }
+
     public enum WeaponType
     {
         Melee,
-        Projectile
+        Ranged
     }
+
+    public Alignment alignmnent = Alignment.Player;
     public WeaponType weaponType = WeaponType.Melee;
 
-    private float startTime;
-    private bool projectileStart = false;
-    private Vector3 startPosition;
-    [Tooltip("The hit box of the weapon (This MUST have a collider on it to work)")]
-    public GameObject weaponHitBox;
-    [Tooltip("The speed of the projectile if this is a projectile weapon")]
-    public float projectileSpeed = 5f;
+    public int damageValue;
 
-    [Tooltip("Use this to flip the weapon if its trailing behind you for some reason")]
+    [Header("IF MELEE WEAPON")]
+    public Collider2D collider;
+
+    [Header("IF RANGED WEAPON")]
+    public GameObject projectile;
+    public Vector2 direction;
+    public float force = 100f;
+    public float duration = 10f;
+    public Transform shootPosition;
+
+
+
     public bool flipWeapon = false;
 
-    [Tooltip("This is if you only want one projectile to be active at one time, like a boomerang or something")]
-    public bool isOnlyOneProjectile = false;
-
-
-    [Tooltip("How long the projectile is allowed to travel")]
-    public float projectileLifeTime = 2.0f;
-    // Start is called before the first frame update
-
-    void Update()
+    public void WeaponStart()
     {
-        if (projectileStart)
-        {
-            transform.position += (-1 * transform.right) * Time.deltaTime * projectileSpeed;
-            if (Time.time - startTime >= projectileLifeTime)
-            {
-                projectileStart = false;
-                transform.position = startPosition;
-                weaponHitBox.SetActive(false);
-                Destroy(gameObject);
-            }
-        }
-    }
-
-    public void WeaponAttack()
-    {
-        if (weaponType == WeaponType.Melee)
-        {
-            weaponHitBox.SetActive(true);
-        }
-        else if (weaponType == WeaponType.Projectile)
-        {
-            weaponHitBox.SetActive(true);
-            startTime = Time.time;
-            projectileStart = true;
-            startPosition = Vector3.zero;
-            transform.localPosition = startPosition;
-        }
-
+        collider.enabled = true;
     }
 
     public void WeaponFinished()
     {
-        if (weaponType == WeaponType.Melee)
-        {
-            weaponHitBox.SetActive(false);
-        }
+        collider.enabled = false;
     }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+    }
+
+    private void OnValidate()
+    {
+        direction = direction.normalized;
+    }
+
+
+
+
+
+
+
+
+
+
 }
