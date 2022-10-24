@@ -1520,7 +1520,7 @@ MonoBehaviour:
   gm: {fileID: 0}
   gsm: {fileID: 0}
   PlayerMovementSpeed: 3.5
-  jumpForce: 4
+  jumpForce: 6.5
   numberOfJumps: 1
   fallMultiplier: 2.5
   isFlipped: 0
@@ -9094,7 +9094,7 @@ GameObject:
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1515361558
 Transform:
   m_ObjectHideFlags: 0
