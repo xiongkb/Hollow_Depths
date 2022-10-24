@@ -1655,7 +1655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponList: []
-  weapon: {fileID: 0}
+  weapon: {fileID: 1670228796}
   coolDown: 0.4
 --- !u!1 &224665440
 GameObject:
@@ -12963,6 +12963,7 @@ GameObject:
   - component: {fileID: 4173863908284865925}
   - component: {fileID: 4173863908284865924}
   - component: {fileID: 4173863908284865947}
+  - component: {fileID: 4173863908284865948}
   m_Layer: 0
   m_Name: ENEMY_Cabinet
   m_TagString: Untagged
@@ -12996,6 +12997,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.26285946, y: 0.9626762}
   m_EdgeRadius: 0
+--- !u!114 &4173863908284865948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4173863908284865946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c259f5eb5ac2414a82aa059e05bb479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  currentHealth: 5
 --- !u!1001 &4173863908573054371
 PrefabInstance:
   m_ObjectHideFlags: 0
