@@ -5,6 +5,7 @@ using UnityEngine;
 public class ActivationTrigger : MonoBehaviour {
 
     [SerializeField] private GameObject displayed;
+    public bool permanentActivation = true;
     void Start()
     {
         displayed.SetActive(false);
@@ -20,9 +21,13 @@ public class ActivationTrigger : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (!permanentActivation)
         {
-            displayed.SetActive(false);
+            if (collision.CompareTag("Player"))
+            {
+                displayed.SetActive(false);
+            }
         }
+        
     }
 }

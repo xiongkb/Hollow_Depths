@@ -5,7 +5,6 @@ using UnityEngine;
 public class Teleporter : MonoBehaviour {
 
     public GameObject sp1, sp2;
-
     private GameObject trig;
     
     void Start() {
@@ -16,7 +15,7 @@ public class Teleporter : MonoBehaviour {
     {
         if (trig != null)
         {
-            if (Input.GetButtonDown("Horizontal"))
+            if (Input.GetKeyDown(KeyCode.T))
             {
                 trig.gameObject.transform.position = sp2.gameObject.transform.position;
 

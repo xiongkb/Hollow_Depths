@@ -5,6 +5,8 @@ using UnityEngine;
 public class DEActivationTrigger : MonoBehaviour {
 
     [SerializeField] private GameObject displayed;
+    public bool permanentDeactivation = true;
+
     void Start()
     {
         displayed.SetActive(true);
@@ -20,9 +22,13 @@ public class DEActivationTrigger : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (!permanentDeactivation)
         {
-            displayed.SetActive(true);
+            if (collision.CompareTag("Player"))
+            {
+                displayed.SetActive(true);
+            }
         }
+        
     }
 }

@@ -42,53 +42,26 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    public void Attack(float xDirection, float yDirection)
+    public void Attack(Vector3 scale)
     {
         //This is where the weapon is rotated in the right direction that you are facing
-        if (weapon)
+        if (weapon && canAttack)
         {
-            if (xDirection != 0 || yDirection != 0)
+            if (weapon.weaponType == Weapon.WeaponType.Melee)
             {
-                weapon.transform.rotation = transform.rotation;
-                lastKnownDirection = new Vector2(xDirection, yDirection);
-                weapon.transform.Rotate(0,0,Mathf.Atan2(lastKnownDirection.y, lastKnownDirection.x) * Mathf.Rad2Deg);
-                //Debug.Log(weapon.transform.eulerAngles.z);
-                if (weapon.flipWeapon)//Rotation before scale, always.
-                {
-                    weapon.transform.Rotate(0, 0, 180);
-                }
-                if (Mathf.Abs(weapon.transform.eulerAngles.z) > 90 && weapon.transform.eulerAngles.z < 270)
-                {
-                    weapon.transform.localScale = new Vector3(weapon.transform.localScale.x, Mathf.Abs(weapon.transform.localScale.y) * -1, weapon.transform.localScale.z);
-                }
-                else
-                {
-                    weapon.transform.localScale = new Vector3(weapon.transform.localScale.x, Mathf.Abs(weapon.transform.localScale.y), weapon.transform.localScale.z);
-                }
-            }
-
-            if (weapon.weaponType == Weapon.WeaponType.Projectile)
-            {
-                //TODO do the spawn thingy
-                if (canAttack && !weapon.isOnlyOneProjectile)
-                {
-                    Weapon weapon2 = Instantiate(weapon, transform);
-                    weapon2.WeaponAttack();
-                    canAttack = false;
-                    StartCoroutine(CoolDown());
-                }
-                else if (canAttack)
-                {
-                    weapon.WeaponAttack();
-                }
-                //Weapon weapon2 = Instantiate(weapon);
-                //weapon2.WeaponAttack();
+                weapon.WeaponStart();
             }
             else
             {
-                weapon.WeaponAttack();
+                GameObject projectile = Instantiate(weapon.projectile, weapon.shootPosition.position, Quaternion.identity);
+                projectile.GetComponent<Projectile>().SetValues(weapon.duration, weapon.alignmnent, weapon.damageValue);
+                projectile.transform.localScale = new Vector3(projectile.transform.localScale.x * (scale.x / Mathf.Abs(scale.x)), projectile.transform.localScale.y, projectile.transform.localScale.z);
+                //projectile.transform.localScale = new Vector3(projectile.transform.localScale.x, projectile.transform.localScale.y, projectile.transform.localScale.z);
+                Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+                rb.AddForce(weapon.direction * weapon.force * scale.x);
+
             }
-            //weapon.WeaponAttack();
+            StartCoroutine(CoolDown());
         }
     }
 
@@ -117,6 +90,7 @@ public class PlayerAttack : MonoBehaviour
 
     private IEnumerator CoolDown()
     {
+        canAttack = false;
         yield return new WaitForSeconds(coolDown);
         canAttack = true;
     }
