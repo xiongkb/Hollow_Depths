@@ -9622,7 +9622,7 @@ GameObject:
   - component: {fileID: 1670228796}
   - component: {fileID: 1670228795}
   m_Layer: 0
-  m_Name: Melee_Atk
+  m_Name: Melee_Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
