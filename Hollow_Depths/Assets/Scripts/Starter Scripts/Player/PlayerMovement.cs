@@ -231,38 +231,42 @@ public class PlayerMovement : MonoBehaviour
 
     #region Movement
 
-    //KC: Attempt to Swim Movement + Trigger
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-       if (collision.CompareTag("UnderWater"))
-       {
-            //canSwim = true; //might be needed to trigger animation?
+    // //KC: Attempt to Swim Movement + Trigger
+    // private void OnTriggerEnter2D(Collider2D collision)
+    // {
+    //    if (collision.CompareTag("UnderWater"))
+    //    {
+    //         // if (Input.GetKeyDown(KeyCode.D))
+    //         // {
+    //         //     //change to use the player multiDirectional movement and disable jump(side scroller?)
+    //         //     isMultiDirectional = true;
+    //         //     canJump = false;
+    //         // }
 
-            //change to use the player multiDirectional movement and disable jump(side scroller?)
-            isMultiDirectional = true;
-            canJump = false;
+    //         //change to use the player multiDirectional movement and disable jump(side scroller?)
+    //         isMultiDirectional = true;
+    //         canJump = false;
 
-            //change gravity
-            rb.gravityScale = 0.1f;
+    //         //change gravity
+    //         rb.gravityScale = 0.5f;
 
-           // Debug.Log("Gravity");
-           // Debug.Log("Nami touched the water collision trigger which is: " + collision);
-            Debug.Log("Entered Water");
-       }
-    }
+    //        //Debug.Log("Gravity");
+    //         Debug.Log("Entered Water");
+    //    }
+    // }
 
-    //KC: Swim exit when Nami is out of the water collision area to reset mack to regular movment
-    private void OnTriggerExit2D(Collider2D collision) {
+    // //KC: Swim exit when Nami is out of the water collision area to reset mack to regular movment
+    // private void OnTriggerExit2D(Collider2D collision) {
 
-        if (collision.gameObject.tag == "UnderWater")
-        {
-            Debug.Log("Left the Water area");
-            isMultiDirectional = false;
-            canJump = true;
-            rb.gravityScale = 1;
-        }
+    //     if (collision.gameObject.tag == "UnderWater")
+    //     {
+    //         Debug.Log("Left the Water area");
+    //         isMultiDirectional = false;
+    //         canJump = true;
+    //         rb.gravityScale = 1;
+    //     }
     
-    }
+    // }
 
     void HandleMovement(float HorizontalMovement, float VerticleMovement)
     {
