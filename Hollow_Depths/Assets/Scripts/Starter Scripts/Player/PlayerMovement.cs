@@ -36,6 +36,10 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("This should be checked if your character has Multi-Directional movement (IE up, down, left, right) and your animator is set up accordingly")]
     public bool isMultiDirectional = false;
 
+//Added Swimming
+    [Tooltip("If you want player to swim underwater")]
+    public bool isSwimming = false;
+//
     [Tooltip("If you want audio to be used alongside this object")]
     public bool isAudioEnabled = true;
 
@@ -164,6 +168,21 @@ public class PlayerMovement : MonoBehaviour
 
         HandleAttackAnimation(HorizontalMovement, VerticleMovement);
     }
+//Added HandleSwim
+       private void HandleSwimming(float HorizontalMovement, float VerticleMovement)
+    {
+        bool SwimmingInputDetected = (HorizontalMovement != 0 || VerticleMovement != 0);
+        if (SwimmingInputDetected)
+        {
+            PlayerAnimator.SetBool("isSwimming", true);
+        }
+        else
+        {
+            PlayerAnimator.SetBool("isSwimming", false);
+        }
+
+        HandleAttackAnimation(HorizontalMovement, VerticleMovement);
+    }
 
     private void HandleAnimationsMulti(float HorizontalMovement, float VerticleMovement)
     {
@@ -232,41 +251,55 @@ public class PlayerMovement : MonoBehaviour
     #region Movement
 
     // //KC: Attempt to Swim Movement + Trigger
-    // private void OnTriggerEnter2D(Collider2D collision)
-    // {
-    //    if (collision.CompareTag("UnderWater"))
-    //    {
-    //         // if (Input.GetKeyDown(KeyCode.D))
-    //         // {
-    //         //     //change to use the player multiDirectional movement and disable jump(side scroller?)
-    //         //     isMultiDirectional = true;
-    //         //     canJump = false;
-    //         // }
-
-    //         //change to use the player multiDirectional movement and disable jump(side scroller?)
-    //         isMultiDirectional = true;
-    //         canJump = false;
+     private void OnTriggerEnter2D(Collider2D collision)
+     {
+        if (collision.CompareTag("UnderWater"))
+        {
+              if (Input.GetKeyDown(KeyCode.D))
+              {
+    //change to use the player multiDirectional movement and disable jump(side scroller?)
+             canJump = false;
+             isSwimming = true;
 
     //         //change gravity
-    //         rb.gravityScale = 0.5f;
+             rb.gravityScale = 0.5f;
 
     //        //Debug.Log("Gravity");
-    //         Debug.Log("Entered Water");
-    //    }
-    // }
+           Debug.Log("Entered Water");
+       }
+        else
+      {
+        PlayerAnimator.SetBool("isSwimming", true);
+            }
+            isMultiDirectional = true;
+            canJump = false;
+            isSwimming = true;
+
+            //change gravity
+            rb.gravityScale = 0;
+
+           // Debug.Log("Gravity");
+           // Debug.Log("Nami touched the water collision trigger which is: " + collision);
+            Debug.Log("Entered Water");
+        }
+     }
 
     // //KC: Swim exit when Nami is out of the water collision area to reset mack to regular movment
-    // private void OnTriggerExit2D(Collider2D collision) {
+  private void OnTriggerExit2D(Collider2D collision) {
 
-    //     if (collision.gameObject.tag == "UnderWater")
-    //     {
-    //         Debug.Log("Left the Water area");
-    //         isMultiDirectional = false;
-    //         canJump = true;
-    //         rb.gravityScale = 1;
-    //     }
-    
-    // }
+         if (collision.gameObject.tag == "UnderWater")
+         {
+          //Added_Bool
+             {
+                PlayerAnimator.SetBool("isSwimming", false);
+            }
+          //
+             Debug.Log("Left the Water area");
+             isMultiDirectional = false;
+             canJump = true;
+             rb.gravityScale = 0;
+        }
+     }
 
     void HandleMovement(float HorizontalMovement, float VerticleMovement)
     {
@@ -365,6 +398,26 @@ public class PlayerMovement : MonoBehaviour
     void HandlePlayerMovementAudio(float HorizontalMovement, float VerticleMovement)
     {
         if (PlayerAnimator.GetBool("isMoving"))
+        {
+            if (!playerAudio.WalkSource.isPlaying && playerAudio.WalkSource.clip != null)
+            {
+                playerAudio.WalkSource.Play();
+            }
+        }
+        else
+        {
+            if (playerAudio.WalkSource.isPlaying && playerAudio.WalkSource.clip != null)
+            {
+                playerAudio.WalkSource.Stop();
+            }
+        }
+        
+    }
+
+    //Added_Handle
+          void HandlePlayerSwimmingAudio(float HorizontalMovement, float VerticleMovement)
+    {
+        if (PlayerAnimator.GetBool("isSwimming"))
         {
             if (!playerAudio.WalkSource.isPlaying && playerAudio.WalkSource.clip != null)
             {
