@@ -23,8 +23,12 @@ public class Player_Oxygen_Segmented : MonoBehaviour {
     public GameObject health3;
     public GameObject health2;
     public GameObject health1;
+    private GameObject Player;
+    public bool InitialOxygen = true;
 
-
+    public IEnumerator OxygenCounter() { while (Player.GetComponent<Player_Health_Segmented>().CurrentHealth > 0) {
+    if (InitialOxygen) { InitialOxygen = false; } else { Player.GetComponent<Player_Health_Segmented>().TakeDamage(); }
+            yield return new WaitForSeconds(4); } }
 
 
 
@@ -34,9 +38,9 @@ public class Player_Oxygen_Segmented : MonoBehaviour {
     void Start()
     {
         respawn = GameObject.FindGameObjectWithTag("Respawn");
-      //  playerScore = 0;
-      //  scoreText.text = playerScore.ToString("D4");
-
+        //  playerScore = 0;
+        //  scoreText.text = playerScore.ToString("D4");
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
 
 
@@ -67,26 +71,11 @@ public class Player_Oxygen_Segmented : MonoBehaviour {
         }
         else if (collision.CompareTag("Oxygen"))
         {
-            AddHealth();
+            Player.GetComponent<Player_Health_Segmented>().AddHealth();
             Destroy(collision.gameObject);
         }
 
 
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Enemy"))
-        {
-            TakeDamage();
-        }
-
-        //===My code to have already been damage at the beginning
-        if (collision.collider.CompareTag("BeginTut"))
-        {
-            TakeDamage();
-            Destroy(collision.gameObject);
-        }
     }
 
     private void TakeDamage()
