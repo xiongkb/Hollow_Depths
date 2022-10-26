@@ -250,56 +250,30 @@ public class PlayerMovement : MonoBehaviour
 
     #region Movement
 
-    // //KC: Attempt to Swim Movement + Trigger
-     private void OnTriggerEnter2D(Collider2D collision)
-     {
-        if (collision.CompareTag("UnderWater"))
-        {
-              if (Input.GetKeyDown(KeyCode.D))
-              {
-    //change to use the player multiDirectional movement and disable jump(side scroller?)
-             canJump = false;
-             isSwimming = true;
-
-    //         //change gravity
-             rb.gravityScale = 0.5f;
-
-    //        //Debug.Log("Gravity");
-           Debug.Log("Entered Water");
-       }
-        else
-      {
-        PlayerAnimator.SetBool("isSwimming", true);
+    //Kang Attempt to Swim Movement + Trigger
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+       if (collision.CompareTag("UnderWater"))
+       {
+             {
+                PlayerAnimator.SetBool("isSwimming", true);
             }
-            isMultiDirectional = true;
-            canJump = false;
-            isSwimming = true;
+        
+       }
+    }
 
-            //change gravity
-            rb.gravityScale = 0;
+    //Kang Swim exit when Nami is out of the water collision area to reset mack to regular movment
+    private void OnTriggerExit2D(Collider2D collision) {
 
-           // Debug.Log("Gravity");
-           // Debug.Log("Nami touched the water collision trigger which is: " + collision);
-            Debug.Log("Entered Water");
-        }
-     }
-
-    // //KC: Swim exit when Nami is out of the water collision area to reset mack to regular movment
-  private void OnTriggerExit2D(Collider2D collision) {
-
-         if (collision.gameObject.tag == "UnderWater")
-         {
-          //Added_Bool
+        if (collision.gameObject.tag == "UnderWater")
+        {
              {
                 PlayerAnimator.SetBool("isSwimming", false);
             }
-          //
-             Debug.Log("Left the Water area");
-             isMultiDirectional = false;
-             canJump = true;
-             rb.gravityScale = 0;
+
         }
-     }
+    
+    }
 
     void HandleMovement(float HorizontalMovement, float VerticleMovement)
     {
