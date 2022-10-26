@@ -1149,8 +1149,6 @@ GameObject:
   - component: {fileID: 203235467}
   - component: {fileID: 203235466}
   - component: {fileID: 203235465}
-  - component: {fileID: 203235464}
-  - component: {fileID: 203235463}
   m_Layer: 0
   m_Name: BubblesUI (1)
   m_TagString: Oxygen
@@ -1158,38 +1156,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &203235463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 203235462}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 527835bece23c4b62b5841c991b15fc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  oxygen4: {fileID: 0}
-  oxygen3: {fileID: 0}
-  oxygen2: {fileID: 0}
-  oxygen1: {fileID: 0}
-  InitialOxygen: 1
-  currentOxygen: 4
---- !u!114 &203235464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 203235462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2122984cbf7af0148b7a06eac6dfe952, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HealAmount: 1
-  DestroyOnContact: 0
 --- !u!61 &203235465
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6100,7 +6066,6 @@ GameObject:
   - component: {fileID: 888262360}
   - component: {fileID: 888262361}
   - component: {fileID: 888262362}
-  - component: {fileID: 888262363}
   m_Layer: 0
   m_Name: Water_Overflow
   m_TagString: Water
@@ -6328,24 +6293,6 @@ MonoBehaviour:
   Bubbles: {fileID: 275821581}
   OxygenTank: {fileID: 509330305}
   displayed: {fileID: 0}
---- !u!114 &888262363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 888262355}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 527835bece23c4b62b5841c991b15fc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  oxygen4: {fileID: 807098291}
-  oxygen3: {fileID: 650030664}
-  oxygen2: {fileID: 1486407092}
-  oxygen1: {fileID: 2051478020}
-  InitialOxygen: 1
-  currentOxygen: 4
 --- !u!1 &915603654
 GameObject:
   m_ObjectHideFlags: 0
