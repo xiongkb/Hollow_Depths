@@ -11,6 +11,7 @@ TagManager:
   - BeginTut
   - Oxygen
   - UnderWater
+  - Water
   layers:
   - Default
   - TransparentFX

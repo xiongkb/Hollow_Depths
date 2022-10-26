@@ -24,6 +24,8 @@ public class Player_Health_Segmented : MonoBehaviour {
     public GameObject health3;
     public GameObject health2;
     public GameObject health1;
+    private GameObject Player;
+    private GameObject Water;
 
 
 
@@ -35,9 +37,11 @@ public class Player_Health_Segmented : MonoBehaviour {
     void Start()
     {
         respawn = GameObject.FindGameObjectWithTag("Respawn");
+        Player = GameObject.FindGameObjectWithTag("Player");
+        Water = GameObject.FindGameObjectWithTag("Water");
         //  playerScore = 0;
         //  scoreText.text = playerScore.ToString("D4");
-       
+
     }
 
 
@@ -109,7 +113,7 @@ public class Player_Health_Segmented : MonoBehaviour {
           } */
 
 
-        if (CurrentHealth == 3)
+        /* if (CurrentHealth == 3)
         {
             health3.SetActive(false);
             CurrentHealth--;
@@ -126,7 +130,28 @@ public class Player_Health_Segmented : MonoBehaviour {
         }
         else {
             Respawn();
+        } */
+        --CurrentHealth;
+
+        if (CurrentHealth == 2)
+        {
+
+            health3.SetActive(false);
+
         }
+        else if (CurrentHealth == 1)
+        {
+
+            health2.SetActive(false);
+
+        }
+        else
+        {
+
+            Respawn();
+
+        }
+        
     }
      
     public void AddHealth()
@@ -168,7 +193,15 @@ public class Player_Health_Segmented : MonoBehaviour {
         gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         gameObject.transform.position = respawn.transform.position;
         CurrentHealth = 3;
-       // AddPoints(deathPenalty);
+        Player.GetComponent<Player_Oxygen_Segmented>().currentOxygen=4;
+        Player.GetComponent<Player_Oxygen_Segmented>().oxygen4.SetActive(true);
+        Player.GetComponent<Player_Oxygen_Segmented>().oxygen3.SetActive(true);
+        Player.GetComponent<Player_Oxygen_Segmented>().oxygen2.SetActive(true);
+        Player.GetComponent<Player_Oxygen_Segmented>().oxygen1.SetActive(true);
+        Water.GetComponent<BubbleTrigger>().RespawnBubbles();
+
+
+        // AddPoints(deathPenalty);
     }
 
     // public int GetScore()
