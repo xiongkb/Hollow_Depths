@@ -10,7 +10,9 @@ public class Player_Health_Segmented : MonoBehaviour {
     private GameObject respawn;
 
     private int playerScore;
-   
+
+    public int MaxHealth = 3;
+    public int CurrentHealth = 3;
 
     // [Tooltip("The score value of a coin or pickup.")]
     // public int coinValue = 5;
@@ -22,6 +24,8 @@ public class Player_Health_Segmented : MonoBehaviour {
     public GameObject health3;
     public GameObject health2;
     public GameObject health1;
+    private GameObject Player;
+    private GameObject Water;
 
 
 
@@ -33,8 +37,10 @@ public class Player_Health_Segmented : MonoBehaviour {
     void Start()
     {
         respawn = GameObject.FindGameObjectWithTag("Respawn");
-      //  playerScore = 0;
-      //  scoreText.text = playerScore.ToString("D4");
+        Player = GameObject.FindGameObjectWithTag("Player");
+        Water = GameObject.FindGameObjectWithTag("Water");
+        //  playerScore = 0;
+        //  scoreText.text = playerScore.ToString("D4");
 
     }
 
@@ -88,27 +94,68 @@ public class Player_Health_Segmented : MonoBehaviour {
         }
     }
 
-    private void TakeDamage()
+    public void TakeDamage()
     {
         // For more health, copy the if block for health3, change health3 to whatever yours is,
         // then change the if statement for health3 to else if
-        if (health3.activeInHierarchy)
+        /*  if (health3.activeInHierarchy)
+          {
+              health3.SetActive(false);
+          }
+          else if (health2.activeInHierarchy)
+          {
+              health2.SetActive(false);
+          }
+          else
+          {
+              health1.SetActive(false);
+              Respawn();
+          } */
+
+
+        /* if (CurrentHealth == 3)
         {
             health3.SetActive(false);
+            CurrentHealth--;
         }
-        else if (health2.activeInHierarchy)
+        else if (CurrentHealth == 2)
         {
             health2.SetActive(false);
+            CurrentHealth--;
+        }
+        else if (CurrentHealth == 1)
+        {
+            health1.SetActive(false);
+            CurrentHealth--;
+        }
+        else {
+            Respawn();
+        } */
+        --CurrentHealth;
+
+        if (CurrentHealth == 2)
+        {
+
+            health3.SetActive(false);
+
+        }
+        else if (CurrentHealth == 1)
+        {
+
+            health2.SetActive(false);
+
         }
         else
         {
-            health1.SetActive(false);
+
             Respawn();
+
         }
+        
     }
      
-    private void AddHealth()
-    {
+    public void AddHealth()
+    /*{
         if (!health2.activeInHierarchy)
         {
             health2.SetActive(true);
@@ -118,8 +165,25 @@ public class Player_Health_Segmented : MonoBehaviour {
             health3.SetActive(true);
         }
         // For more health, just copy the else if block for health3 and change the name.
+    } */
+        {
+        if (CurrentHealth == 1)
+        {
+            health2.SetActive(true);
+            CurrentHealth++;
+        }
+        else if (CurrentHealth == 2)
+        {
+            health3.SetActive(true);
+            CurrentHealth++;
+        }
+        else
+        {
+            CurrentHealth = 3;
+            health3.SetActive(true);
+        }
+        // For more health, just copy the else if block for health3 and change the name.
     }
-
     public void Respawn()
     {
         // For more health, just add another similar line here.
@@ -128,7 +192,16 @@ public class Player_Health_Segmented : MonoBehaviour {
         health1.SetActive(true);
         gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         gameObject.transform.position = respawn.transform.position;
-       // AddPoints(deathPenalty);
+        CurrentHealth = 3;
+        Player.GetComponent<Player_Oxygen_Segmented>().currentOxygen=4;
+        Player.GetComponent<Player_Oxygen_Segmented>().oxygen4.SetActive(true);
+        Player.GetComponent<Player_Oxygen_Segmented>().oxygen3.SetActive(true);
+        Player.GetComponent<Player_Oxygen_Segmented>().oxygen2.SetActive(true);
+        Player.GetComponent<Player_Oxygen_Segmented>().oxygen1.SetActive(true);
+        Water.GetComponent<BubbleTrigger>().RespawnBubbles();
+
+
+        // AddPoints(deathPenalty);
     }
 
     // public int GetScore()

@@ -12,6 +12,7 @@ TagManager:
   - Oxygen
   - UnderWater
   - Ground
+  - Water
   layers:
   - Default
   - TransparentFX

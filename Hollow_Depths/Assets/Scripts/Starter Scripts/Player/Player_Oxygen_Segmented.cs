@@ -19,12 +19,53 @@ public class Player_Oxygen_Segmented : MonoBehaviour {
 
   //  public Text scoreText;
     // Feel free to add more! You'll need to edit the script in a few spots, though.
-    public GameObject health4;
-    public GameObject health3;
-    public GameObject health2;
-    public GameObject health1;
+    public GameObject oxygen4;
+    public GameObject oxygen3;
+    public GameObject oxygen2;
+    public GameObject oxygen1;
+    private GameObject Player;
+    public bool InitialOxygen = true;
+
+    public int currentOxygen = 4;
 
 
+
+    public IEnumerator OxygenCounter() {
+        while (Player.GetComponent<Player_Health_Segmented>().CurrentHealth > 0) {
+        if (InitialOxygen) { InitialOxygen = false; }
+            else {
+                --currentOxygen;
+
+                if (currentOxygen == 3)
+                {
+
+                    oxygen4.SetActive(false);
+
+                }
+                else if (currentOxygen == 2)
+                {
+
+                    oxygen3.SetActive(false);
+
+                }
+                else if (currentOxygen == 1)
+                {
+
+                    oxygen2.SetActive(false);
+
+                }
+                else
+                {
+
+                    Player.GetComponent<Player_Health_Segmented>().TakeDamage();
+
+                }
+
+                  
+            }
+            yield return new WaitForSeconds(8);
+        }
+    }
 
 
 
@@ -34,9 +75,9 @@ public class Player_Oxygen_Segmented : MonoBehaviour {
     void Start()
     {
         respawn = GameObject.FindGameObjectWithTag("Respawn");
-      //  playerScore = 0;
-      //  scoreText.text = playerScore.ToString("D4");
-
+        //  playerScore = 0;
+        //  scoreText.text = playerScore.ToString("D4");
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
 
 
@@ -56,9 +97,9 @@ public class Player_Oxygen_Segmented : MonoBehaviour {
         // {
         //     Time.timeScale = 0;
         // }
-        // else if (collision.CompareTag("Health"))
+        // else if (collision.CompareTag("oxygen"))
         // {
-        //     AddHealth();
+        //     Addoxygen();
         //     Destroy(collision.gameObject);
         // }
          if (collision.CompareTag("Death"))
@@ -67,75 +108,94 @@ public class Player_Oxygen_Segmented : MonoBehaviour {
         }
         else if (collision.CompareTag("Oxygen"))
         {
-            AddHealth();
-            Destroy(collision.gameObject);
+            //Player.GetComponent<Player_Health_Segmented>().AddHealth();
+          
+            if (currentOxygen < 4) {
+
+                ++currentOxygen;
+
+                if (currentOxygen == 4)
+                {
+
+                    oxygen4.SetActive(true);
+
+                }
+                else if (currentOxygen == 3)
+                {
+
+                    oxygen3.SetActive(true);
+
+                }
+                else if (currentOxygen == 2)
+                {
+
+                    oxygen2.SetActive(true);
+
+                }
+                else
+                {
+
+                    oxygen1.SetActive(true);
+
+                }
+
+            }
+
+
+
+            collision.gameObject.SetActive(false);
         }
 
 
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Enemy"))
-        {
-            TakeDamage();
-        }
-
-        //===My code to have already been damage at the beginning
-        if (collision.collider.CompareTag("BeginTut"))
-        {
-            TakeDamage();
-            Destroy(collision.gameObject);
-        }
     }
 
     private void TakeDamage()
     {
-        // For more health, copy the if block for health3, change health3 to whatever yours is,
-        // then change the if statement for health3 to else if
-        if (health4.activeInHierarchy)
+        // For more oxygen, copy the if block for oxygen3, change oxygen3 to whatever yours is,
+        // then change the if statement for oxygen3 to else if
+        if (oxygen4.activeInHierarchy)
         {
-            health4.SetActive(false);
+            oxygen4.SetActive(false);
         }
-        else if (health3.activeInHierarchy)
+        else if (oxygen3.activeInHierarchy)
         {
-            health3.SetActive(false);
+            oxygen3.SetActive(false);
         }
-        else if (health2.activeInHierarchy)
+        else if (oxygen2.activeInHierarchy)
         {
-            health2.SetActive(false);
+            oxygen2.SetActive(false);
         }
         else
         {
-            health1.SetActive(false);
+            oxygen1.SetActive(false);
             Respawn();
         }
     }
      
-    private void AddHealth()
+    private void Addoxygen()
     {
-        if (!health2.activeInHierarchy)
+        if (!oxygen2.activeInHierarchy)
         {
-            health2.SetActive(true);
+            oxygen2.SetActive(true);
         }
-        else if (!health3.activeInHierarchy)
+        else if (!oxygen3.activeInHierarchy)
         {
-            health3.SetActive(true);
+            oxygen3.SetActive(true);
         }
-        else if (!health4.activeInHierarchy)
+        else if (!oxygen4.activeInHierarchy)
         {
-            health4.SetActive(true);
+            oxygen4.SetActive(true);
         }
-        // For more health, just copy the else if block for health3 and change the name.
+        // For more oxygen, just copy the else if block for oxygen3 and change the name.
     }
 
     public void Respawn()
     {
-        // For more health, just add another similar line here.
-        health4.SetActive(true);
-        health3.SetActive(true);
-        health2.SetActive(true);
-        health1.SetActive(true);
+        // For more oxygen, just add another similar line here.
+        oxygen4.SetActive(true);
+        oxygen3.SetActive(true);
+        oxygen2.SetActive(true);
+        oxygen1.SetActive(true);
         gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         gameObject.transform.position = respawn.transform.position;
        // AddPoints(deathPenalty);
