@@ -15,7 +15,7 @@ public class PlayerHealth : MonoBehaviour
     public int currentHealth;
 
     [Tooltip("If you're using segmented health, this is gameObject that holds your health icons as its children")]
-    public GameObject HealthBarSegments;
+    public GameObject HealthIcons;
 
     [Tooltip("This is the Bar of health that you use if you're doing non-segmented health")]
     public GameObject HealthBar;
@@ -24,17 +24,13 @@ public class PlayerHealth : MonoBehaviour
 
     private List<GameObject> TempHearts = new List<GameObject>();
 
-    [Header("Properties")]
-    [Tooltip("This is if you're using segmented health (like in legend of zelda)")]
-    public bool isSegmented = false;
-
-    [Tooltip("This makes it so you can have health over the maximum amount. CURRENTLY DOES NOT WORK WITH IS_SEGMENTED")]
-    public bool allowOverHealing = false;
-
     [Tooltip("If you actually want to use a healthbar or not")]
     public bool useHealthBar = false;
 
     private PlayerMovement playerMovement;
+
+
+    [HideInInspector] public int index = 0; //for editor uses
 
     void Start()
     {
@@ -44,11 +40,11 @@ public class PlayerHealth : MonoBehaviour
 
     public void SetUpHealth()
     {
-        if (isSegmented)
+        if (!useHealthBar)
         {
             Hearts.Clear();
             TempHearts.Clear();
-            foreach (Transform child in HealthBarSegments.transform)
+            foreach (Transform child in HealthIcons.transform)
             {
                 child.gameObject.GetComponent<Image>().color = Color.white;//This makes the color to white, you can make this a public variable if you want to change it
                 Hearts.Add(child.gameObject);
@@ -71,7 +67,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void DecreaseHealth(int value)//This is the function to use if you want to decrease the player's health somewhere
     {
-        if (isSegmented)
+        if (!useHealthBar)
         {
             SegmentedHealthDecrease(value);
             return;
@@ -86,13 +82,13 @@ public class PlayerHealth : MonoBehaviour
 
     public void IncreaseHealth(int value)//This is the function to use if you want to increase the player's heath somewhere
     {
-        if (isSegmented)
+        if (!useHealthBar)
         {
             SegmentedHealthIncrease(value);
             return;
         }
         currentHealth += value;
-        if (!allowOverHealing && currentHealth > maxHealth)
+        if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
         }
@@ -136,7 +132,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void ResetHealth()//Resets health back to normal
     {
-        if (isSegmented)
+        if (!useHealthBar)
         {
             for (int i = 0; i < Hearts.Count; i++)
             {
@@ -178,19 +174,19 @@ public class PlayerHealth : MonoBehaviour
         Collider2D thisCollision = GetComponent<Collider2D>();
         if (collision.otherCollider == thisCollision)
         {
-            if (collision.gameObject.TryGetComponent(out DamageDealer damageValues))
+            if (collision.gameObject.TryGetComponent(out Weapon weapon))
             {
-                if (damageValues.damageType == DamageDealer.DamageType.Enemy ||
-                    damageValues.damageType == DamageDealer.DamageType.Environment)
+                if (weapon.alignmnent == Weapon.Alignment.Enemy ||
+                    weapon.alignmnent == Weapon.Alignment.Environment)
                 {
-                    DecreaseHealth(damageValues.DamageValue);
+                    DecreaseHealth(weapon.damageValue);
                     if (currentHealth == 0)
                     {
                         playerMovement.TimeToDie();
                     }
                 }
             }
-            if (collision.gameObject.TryGetComponent(out HealValue healingValue))
+            if (collision.gameObject.TryGetComponent(out HealingItem healingValue))
             {
                 IncreaseHealth(healingValue.HealAmount);
                 if (healingValue.DestroyOnContact)
@@ -206,19 +202,19 @@ public class PlayerHealth : MonoBehaviour
         Collider2D thisCollider = GetComponent<Collider2D>();
         if (collision.IsTouching(thisCollider))
         {
-            if (collision.gameObject.TryGetComponent(out DamageDealer damageValues))
+            if (collision.gameObject.TryGetComponent(out Weapon weapon))
             {
-                if (damageValues.damageType == DamageDealer.DamageType.Enemy ||
-                    damageValues.damageType == DamageDealer.DamageType.Environment)
+                if (weapon.alignmnent == Weapon.Alignment.Enemy ||
+                    weapon.alignmnent == Weapon.Alignment.Environment)
                 {
-                    DecreaseHealth(damageValues.DamageValue);
+                    DecreaseHealth(weapon.damageValue);
                     if (currentHealth == 0)
                     {
                         playerMovement.TimeToDie();
                     }
                 }
             }
-            if (collision.gameObject.TryGetComponent(out HealValue healingValue))
+            if (collision.gameObject.TryGetComponent(out HealingItem healingValue))
             {
                 IncreaseHealth(healingValue.HealAmount);
                 if (healingValue.DestroyOnContact)
