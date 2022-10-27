@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9358529db3a2cff4292cc9825161d8c9, type: 3}
   m_Name: Main_Speaker_LIbrary
   m_EditorClassIdentifier: 
-  speakerLibrary: []
+  speakerLibrary:
+  - name: Nami
+    sprite: {fileID: -291938102, guid: d1550831a390f4bb5b4d9ce1bdf55758, type: 3}
