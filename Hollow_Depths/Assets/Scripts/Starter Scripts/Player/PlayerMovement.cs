@@ -22,16 +22,19 @@ public class PlayerMovement : MonoBehaviour
     [Header("Properties")]
     [Tooltip("The speed at which the player moves")]
     public float PlayerMovementSpeed = 3.5f;
+    [Tooltip("The force of your jump (Be sure to have your gravity set to 1 for side-scroller)")]
+    public float jumpForce = 1;
 
+    public int numberOfJumps = 1;
+    int jumpsLeft = 0;
+
+    [Tooltip("The multiplier at which you fall down (used for smooth movement) and it can't be below 1")]
+    public float fallMultiplier = 2.5f;
     [Tooltip("This means that you're 1D character is facing left by default (1D means you only face left or right)")]
     public bool isFlipped = false;
 
     [Tooltip("This should be checked if your character has Multi-Directional movement (IE up, down, left, right) and your animator is set up accordingly")]
     public bool isMultiDirectional = false;
-
-    // KC: changing player movment speed when underwater
-    public float underWaterSpeed = 3f;
-
 
     [Tooltip("If you want audio to be used alongside this object")]
     public bool isAudioEnabled = true;
@@ -39,27 +42,30 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("This is whether or not the player can actually move")]
     public bool disabled = false;
 
-    [Header("Side-Scroller Properties")]
+    [Header("Raycast Jumping  -MOST RELIABLE-")]
+    [Tooltip("If you're using raycast ")]
+    public bool useRayCastJumping = false;
+    public LayerMask groundLayer;
+    public float rayLength = 0;
+
+    
     [Tooltip("If you're player can jump, it's automatically a side-scroller, it isn't compatible with Top-Down movement")]
-    public bool canJump = false;
+    public bool canJump = true;
 
-    [Tooltip("The force of your jump (Be sure to have your gravity set to 1 for side-scroller)")]
-    public float jumpForce = 1;
+    
 
-    [Tooltip("The multiplier at which you fall down (used for smooth movement) and it can't be below 1")]
-    public float fallMultiplier = 2.5f;
-
+    [Header("NonRaycast Jump Properties")]
     [Tooltip("The multiplier at which you fall down if you hold the jump button (used for smooth movement) and it can't be below 1")]
     public float lowJumpMultiplier = 2f;
     private Rigidbody2D rb;
     private bool isJumping = false;
     private bool canRayCastJump = false;
 
-    [Header("Raycast Jumping")]
-    [Tooltip("If you're using raycast ")]
-    public bool useRayCastJumping = false;
-    public LayerMask groundLayer;
-    public float rayLength = 0;
+    
+
+    float lastVelocity = 1;
+
+
 
     // Update is called once per frame
     void Start()
@@ -67,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
         playerAudio = GetComponent<PlayerAudio>();
         playerAttack = GetComponent<PlayerAttack>();
         rb = GetComponent<Rigidbody2D>();
+        jumpsLeft = numberOfJumps;
     }
 
     void Update()
@@ -78,17 +85,23 @@ public class PlayerMovement : MonoBehaviour
         {
             HorizontalMovement = Input.GetAxisRaw("Horizontal");
             VerticleMovement = Input.GetAxisRaw("Vertical");
-            if (canJump)
+
+            HandleJump();
+            
+            if (Input.GetButtonDown("Jump"))
             {
+                
                 HandleJump();
-            }
-            if (Input.GetButtonDown("Jump") && canJump)
-            {
-                HandleJump();
+                jumpsLeft--;
                 //Debug.Log(canRayCastJump);
-                if (useRayCastJumping && canRayCastJump)
+                if (useRayCastJumping && canRayCastJump && canJump)
                 {
                     rb.velocity = Vector2.up * jumpForce;
+                    if (jumpsLeft == 0)
+                    {
+                        canJump = false;
+                    }
+ 
                     isJumping = true;
                     canRayCastJump = false;
                     HandleJumpAudio();
@@ -97,10 +110,11 @@ public class PlayerMovement : MonoBehaviour
                 else if(!useRayCastJumping && !isJumping)
                 {
                     rb.velocity = Vector2.up * jumpForce;
-                  //  isJumping = true;
+                    isJumping = true;
                     HandleJumpAudio();
                 }
             }
+            
         }
 
         if (PlayerAnimator != null)
@@ -113,6 +127,12 @@ public class PlayerMovement : MonoBehaviour
         {
             HandleAudio(HorizontalMovement, VerticleMovement);
         }
+
+        if (Mathf.Abs(HorizontalMovement) == 1)
+        {
+            lastVelocity = HorizontalMovement;
+        }
+        
     }
 
     #region Animations
@@ -162,24 +182,27 @@ public class PlayerMovement : MonoBehaviour
                 PlayerAnimator.SetBool("isAttacking", true);
                 if (playerAttack != null)
                 {
-                    playerAttack.Attack(HorizontalMovement, VerticleMovement);
+                    playerAttack.Attack(transform.localScale);
                 }
             }
             else
             {
                 if (playerAttack != null)
                 {
-                    playerAttack.Attack(HorizontalMovement, VerticleMovement);
+                    playerAttack.Attack(transform.localScale);
                 }
             }
         }
         else
         {
+            
             PlayerAnimator.SetBool("isAttacking", false);
             if (playerAttack != null)
             {
                 playerAttack.StopAttack();
             }
+            
+            
 
         }
 
@@ -208,44 +231,6 @@ public class PlayerMovement : MonoBehaviour
 
     #region Movement
 
-    //KC: Attempt to Swim Movement + Trigger
-  private void OnTriggerEnter2D(Collider2D collision)
-    {
-       if (collision.CompareTag("UnderWater"))
-       {
-            //canSwim = true; //might be needed to trigger animation?
-
-            //change to use the player multiDirectional movement and disable jump(side scroller?)
-            isMultiDirectional = true;
-            canJump = false;
-            canRayCastJump = true;
-
-            //change gravity
-            rb.gravityScale = 0.1f;
-
-           // Debug.Log("Gravity");
-           // Debug.Log("Nami touched the water collision trigger which is: " + collision);
-            Debug.Log("Entered Water");
-       }
-    }
-
-    //KC: Swim exit when Nami is out of the water collision area to reset mack to regular movment
-    private void OnTriggerExit2D(Collider2D collision) {
-
-        if (collision.gameObject.tag == "UnderWater")
-        {
-            Debug.Log("Left the Water area");
-            isMultiDirectional = false;
-            canJump = true;
-            canRayCastJump = false;
-            rb.gravityScale = 1;
-        }
-    
-    }
-
-
-
-
     void HandleMovement(float HorizontalMovement, float VerticleMovement)
     {
         if (canJump)
@@ -253,18 +238,17 @@ public class PlayerMovement : MonoBehaviour
             VerticleMovement = 0;
         }
         Vector3 inputVector = new Vector3(HorizontalMovement, VerticleMovement, 0).normalized;
-        float ScaledSpeed = PlayerMovementSpeed * Time.deltaTime;//Make this bad boi frame independent
-        if (!canJump)
-        {
-            //transform.Translate(inputVector * ScaledSpeed);
+        float ScaledSpeed = PlayerMovementSpeed * Time.deltaTime; //Make this bad boi frame independent
 
-            //KC: commented out the above to use the below. Calculation to stop vertical acceleration forces(?)  but can still sink
-            rb.velocity = new Vector2(HorizontalMovement * PlayerMovementSpeed, rb.velocity.y + (VerticleMovement * underWaterSpeed * Time.deltaTime));
+        if (!canJump) //Extraneous Jump that has weird physics
+        {
+            transform.Translate(inputVector * ScaledSpeed);
         }
         else
         {
             rb.velocity = new Vector2(HorizontalMovement * PlayerMovementSpeed, rb.velocity.y);
         }
+        rb.velocity = new Vector2(HorizontalMovement * PlayerMovementSpeed, rb.velocity.y);
     }
 
     void HandleJump()
@@ -274,13 +258,18 @@ public class PlayerMovement : MonoBehaviour
             Vector3 temp = p_collider.bounds.center;
             //temp.y += p_collider.bounds.extents.y;
             RaycastHit2D hit = Physics2D.BoxCast(temp, p_collider.bounds.size, 0.0f, Vector2.down, rayLength, groundLayer);
-            //Debug.DrawRay(temp, Vector2.down * rayLength, Color.red);
+            Debug.DrawRay(temp, Vector2.down * rayLength, Color.red);
             //RaycastHit2D hit = Physics2D.Raycast(p_collider.bounds.center, Vector2.down, rayLength, groundLayer);
-            if (hit.collider != null )
+            if (hit.collider != null && canJump)
             {
                 //Debug.Log("Hit the floor!");
                 canRayCastJump = true;
                 isJumping = false;
+                jumpsLeft = numberOfJumps;
+            }
+            if (rb.velocity.y < 0)
+            {
+                canJump = true;
             }
         }
         else
@@ -309,16 +298,17 @@ public class PlayerMovement : MonoBehaviour
 
     void HandlePlayerOrientation(float HorizontalVelocity)
     {
-        if (HorizontalVelocity < 0)
+        float value = (HorizontalVelocity == 0) ? lastVelocity : HorizontalVelocity;
+        float xScale = Mathf.Abs(transform.localScale.x);
+        if (HorizontalVelocity > 0)
         {
-            SpriteRenderer PlayerVector = PlayerAnimator.gameObject.GetComponent<SpriteRenderer>();
-            PlayerVector.flipX = !isFlipped;
+            value = 1;
         }
-        else if (HorizontalVelocity > 0)
+        else if (HorizontalVelocity < 0)
         {
-            SpriteRenderer PlayerVector = PlayerAnimator.gameObject.GetComponent<SpriteRenderer>();
-            PlayerVector.flipX = isFlipped;
+            value = -1;
         }
+        transform.localScale = new Vector3(value * xScale, transform.localScale.y, transform.localScale.z);
     }
 
     #endregion
@@ -433,4 +423,5 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Game Manager or Game Scene Manager not assigned on player!");
         }
     }
+
 }

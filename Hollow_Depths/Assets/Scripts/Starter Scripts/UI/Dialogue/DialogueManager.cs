@@ -13,14 +13,14 @@ using System;
  * The Dialogue Manager navigates the sent text and prints it to text objects in the canvas and will toggle
  * the Dialogue Box when appropriate
  * 
- * A script by Michael O'Connell, extended by Benjamin Cohen, further extended by Eric Bejleri
+ * A script by Michael O'Connell, extended by Benjamin Cohen, further extended by Eric Bejleri, and then extended even FURTHER again by Benjamin Cohen
  */
 
 public class DialogueManager : MonoBehaviour
 {
     [Header("UI Elements")]
     [Tooltip("your fancy canvas image that holds your text objects")]
-    public GameObject CanvasBox;
+    public GameObject DialogueUI;
 
 
     [Tooltip("Your text body")]
@@ -34,8 +34,8 @@ public class DialogueManager : MonoBehaviour
 
     [Tooltip("This is whether or not you want scrolling text in your game, or instant text")]
     public bool isScrollingText = true;
-    [Tooltip("The speed at which the text will scroll across the screen (in seconds)")]
-    public float typeSpeed = 0.5f;
+    [Tooltip("Seconds per letter")]
+    public float typeSpeed = 0.01f;
 
 
     // private bool isOpen; // represents if the dialogue box is open or closed
@@ -61,16 +61,12 @@ public class DialogueManager : MonoBehaviour
     private bool isTyping = false;
     private bool cancelTyping = false;
 
-    [System.Serializable]
-    public class SpriteInfo
-    {
-        public string name;
-        public Sprite sprite;
-    }
     [Header("Dialogue Image")]
     [Tooltip("Invisible/Placeholder sprite for when no one is talking")]
     public Sprite invisSprite;
-    public List<SpriteInfo> speakerSpriteList = new List<SpriteInfo>();
+
+    [Tooltip("SpeakerLibrary Object goes in here to access your entire list of speakers")]
+    public SpeakerLibrary speakerLibrary;
     [HideInInspector]
     public List<string> speakerSpriteNames;
 
@@ -82,7 +78,7 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
 
-        foreach (SpriteInfo info in speakerSpriteList)
+        foreach (SpeakerLibrary.SpriteInfo info in speakerLibrary.speakerLibrary)
         {
             speakerSpriteNames.Add(info.name);
         }
@@ -104,7 +100,7 @@ public class DialogueManager : MonoBehaviour
     {
         isInDialouge = true;
         speaker.sprite = invisSprite; //Clear the speaker
-        CanvasBox.SetActive(true);
+        DialogueUI.SetActive(true);
         continueImage.SetActive(false);
         if (freezePlayerOnDialogue)
         {
@@ -159,7 +155,7 @@ public class DialogueManager : MonoBehaviour
             string spriteName = inputStream.Dequeue().Substring(part.IndexOf('=') + 1, part.IndexOf(']') - (part.IndexOf('=') + 1));
             if (spriteName != "")
             {
-                speaker.sprite = speakerSpriteList[speakerSpriteNames.IndexOf(spriteName)].sprite; //sets the speaker sprite to corresponding sprite
+                speaker.sprite = speakerLibrary.speakerLibrary[speakerSpriteNames.IndexOf(spriteName)].sprite; //sets the speaker sprite to corresponding sprite
             }
             else
             {
@@ -220,7 +216,7 @@ public class DialogueManager : MonoBehaviour
         TextBox.text = "";
         NameText.text = "";
         inputStream.Clear();
-        CanvasBox.SetActive(false);
+        DialogueUI.SetActive(false);
 
         isInDialouge = false;
         cancelTyping = false;
