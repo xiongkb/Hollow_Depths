@@ -2905,7 +2905,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1419598471}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &343143578
 SpriteRenderer:
@@ -2972,7 +2972,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.089661896, y: -0.30155966}
+  m_Offset: {x: 0.06133604, y: -0.21095373}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2983,7 +2983,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.79130423, y: 0.98176616}
+  m_Size: {x: 1.074558, y: 1.1629779}
   m_EdgeRadius: 0
 --- !u!114 &343143581
 MonoBehaviour:
@@ -9405,7 +9405,7 @@ GameObject:
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &571249108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9432,7 +9432,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.36856937, y: 0.8290986}
+  m_Offset: {x: 0.17481995, y: 0.8290986}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -9443,7 +9443,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.767374, y: 3.4780238}
+  m_Size: {x: 1.7673721, y: 3.4780238}
   m_EdgeRadius: 0
 --- !u!4 &571249110
 Transform:
@@ -9458,7 +9458,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1419598471}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &575547641
 GameObject:
@@ -9532,7 +9532,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.04227203, y: 0.07916632}
+  m_Offset: {x: -0.03137465, y: 0.07916629}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -9543,7 +9543,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5554559, y: 1.1216674}
+  m_Size: {x: 0.95201385, y: 1.1216674}
   m_EdgeRadius: 0
 --- !u!212 &578668780
 SpriteRenderer:
@@ -9610,7 +9610,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1419598471}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &586889969 stripped
 Transform:
@@ -13873,7 +13873,7 @@ GameObject:
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1109781778
 Transform:
   m_ObjectHideFlags: 0
@@ -15692,9 +15692,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 343143577}
   - {fileID: 571249110}
   - {fileID: 578668781}
+  - {fileID: 343143577}
   - {fileID: 1109781778}
   m_Father: {fileID: 1966134316}
   m_RootOrder: 0
@@ -16245,7 +16245,7 @@ GameObject:
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1484623915
 MonoBehaviour:
   m_ObjectHideFlags: 0
