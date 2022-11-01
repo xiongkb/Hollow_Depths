@@ -11,7 +11,15 @@ public class EnemyPatrolPathBehaviour : StateMachineBehaviour
     public Transform nextPos;
     private GameObject thisObject;
     private int i;
+    [Header("This is determining if the sprite for your enemy is facing the right or left")]
+    public bool isEnemySpriteFacingRight = true;
+
+    private EnemyAnimController cont;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
+
+    //
+    public Vector3 lastPosition;
+
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         thisObject = animator.gameObject;
@@ -21,6 +29,8 @@ public class EnemyPatrolPathBehaviour : StateMachineBehaviour
             PathNodes.Add(path); // add every path to our list
         }
         nextPos = PathNodes[0]; // the first target is the first transform
+        cont = animator.gameObject.GetComponent<EnemyAnimController>();
+        lastPosition = cont.returnPosition;
 
         
     }
@@ -30,7 +40,14 @@ public class EnemyPatrolPathBehaviour : StateMachineBehaviour
     {
         navigate();
     }
-    
+
+    public override void OnStateExit(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex)
+    {
+        lastPosition = animator.gameObject.transform.position;
+        cont.returnPosition = lastPosition;
+        Debug.Log("Last Position (Path) Saved " + lastPosition);
+    }
+
     private void setNextNode()
     {
         nextPos = PathNodes[i]; // set the next position
@@ -65,14 +82,45 @@ public class EnemyPatrolPathBehaviour : StateMachineBehaviour
 
     private void navigate()
     {
-        if(thisObject.transform.position == nextPos.position) // if we have reached this position
+        if (cont.GetState() == 1)
         {
-            setNextNode(); // set the next position
+            if (thisObject.transform.position == nextPos.position) // if we have reached this position
+            {
+                setNextNode(); // set the next position
+            }
+
+            float step = speed * Time.deltaTime;
+            thisObject.transform.position = Vector3.MoveTowards(thisObject.transform.position, nextPos.position, step); // move towards the next position
+            float temp = isEnemySpriteFacingRight ? -1 : 1;
+            if (thisObject.transform.position.x > nextPos.position.x)
+            {
+                thisObject.transform.localScale = new Vector3(Mathf.Abs(thisObject.transform.localScale.x) * temp, thisObject.transform.localScale.y);
+            }
+            else
+            {
+                thisObject.transform.localScale = new Vector3(Mathf.Abs(thisObject.transform.localScale.x) * temp * -1, thisObject.transform.localScale.y);
+            }
+        }
+        else //Return only since chase will auto change behavior
+        {
+            float step = speed * Time.deltaTime;
+            thisObject.transform.position = Vector3.MoveTowards(thisObject.transform.position, lastPosition, step); // move towards the return position
+            float temp = isEnemySpriteFacingRight ? -1 : 1;
+            if (thisObject.transform.position.x > nextPos.position.x)
+            {
+                thisObject.transform.localScale = new Vector3(Mathf.Abs(thisObject.transform.localScale.x) * temp, thisObject.transform.localScale.y);
+            }
+            else
+            {
+                thisObject.transform.localScale = new Vector3(Mathf.Abs(thisObject.transform.localScale.x) * temp * -1, thisObject.transform.localScale.y);
+            }
+
+            if (thisObject.transform.position == lastPosition)
+            {
+                cont.SetStateNormal();
+            }
         }
         
-        float step = speed * Time.deltaTime;
-        thisObject.transform.position = Vector3.MoveTowards(thisObject.transform.position, nextPos.position, step); // move towards the next position
 
-        
     }
 }
