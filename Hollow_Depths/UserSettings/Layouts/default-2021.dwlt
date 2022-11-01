@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2217
     height: 1308
   m_ShowMode: 4
-  m_Title: Console
+  m_Title: Hierarchy
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 102
+  controlID: 70
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 494
     height: 1258
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -94,8 +94,8 @@ MonoBehaviour:
     y: 0
     width: 308
     height: 864
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -120,8 +120,8 @@ MonoBehaviour:
     y: 864
     width: 1723
     height: 394
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 13}
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 62
+  controlID: 71
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 63
+  controlID: 72
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -309,15 +309,16 @@ MonoBehaviour:
     m_KeySerializationHelper:
     - {fileID: -6975190811083476099, guid: e7b2c43311b31bb4c8da2b15df38f14b, type: 2}
     - {fileID: 4860166110297846775, guid: a9f61f8a5ca676244926e4ec187a6253, type: 2}
+    - {fileID: 6732220704651252994, guid: 505cee1a8fdfd6e4cb898e06026f7ee1, type: 2}
     m_ValueSerializationHelper:
     - e00: 1
       e01: 0
       e02: 0
-      e03: 0
+      e03: 83.5
       e10: 0
       e11: 1
       e12: 0
-      e13: 0
+      e13: 157
       e20: 0
       e21: 0
       e22: 1
@@ -334,6 +335,22 @@ MonoBehaviour:
       e11: 1
       e12: 0
       e13: 217
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 83.5
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 317
       e20: 0
       e21: 0
       e22: 1
@@ -399,22 +416,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites
+    - Assets/Scripts/Starter Scripts/Enemy
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Sprites
+  - Assets/Scripts/Starter Scripts/Enemy
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\mkan-\Documents\UFOnline Stuff\DIG3713 Game Content\Unity\Hollow_Depth\Hollow_Depths\Hollow_Depths
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 115}
-    m_SelectedIDs: ca650000
-    m_LastClickedID: 26058
-    m_ExpandedIDs: 00000000c4650000c6650000c8650000ca650000cc65000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: a6750000
+    m_LastClickedID: 30118
+    m_ExpandedIDs: 00000000386600003a6600003c6600003e66000040660000a06b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -442,7 +459,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c4650000c6650000c8650000ca650000cc650000ce650000
+    m_ExpandedIDs: 00000000386600003a6600003c6600003e66000040660000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -467,10 +484,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 72650000
-    m_LastClickedInstanceID: 25970
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c62300006e860000f8650000
+    m_SelectedInstanceIDs: 84010100
+    m_LastClickedInstanceID: 65924
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c62300006e860000f86500002a740000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -532,8 +549,8 @@ MonoBehaviour:
     m_CachedPref: 160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 25970
-  m_LastVerticalScrollValue: 0
+  m_LastInspectedObjectInstanceID: -1
+  m_LastVerticalScrollValue: 20
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -570,9 +587,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 72650000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 3242ffff8844ffff3a46ffffea48ffffd24bffff345cffff8a64ffff62f8fffff8faffff6a6a00006e6a0000ca6a0000047b0100e2820100e6820100
+      m_SelectedIDs: 2699ffff
+      m_LastClickedID: -26330
+      m_ExpandedIDs: 2699ffff4899ffff3a9affff8cb6ffffa8b6ffffeec2ffff5ecaffffa6d7ffff78dbffff8ae5ffff44eaffff00fbffff0e5f00003a5f0000cc5f00005060000050610000ec8f000018910000049d00003c9d0000ea9d00005a9f000032a0000042a0000038bc0000bec7000068e90000d0ea00000200010084010100f802010008030100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -843,9 +860,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 32.403618, y: 7.6432776, z: 0.15481319}
+    m_Target: {x: 29.752083, y: 9.596107, z: 0.3201591}
     speed: 2
-    m_Value: {x: 32.403618, y: 7.6432776, z: 0.15481319}
+    m_Value: {x: 29.748953, y: 9.494182, z: 0.32300118}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -896,9 +913,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 4.18374
+    m_Target: 6.599894
     speed: 2
-    m_Value: 4.18374
+    m_Value: 6.315688
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -984,7 +1001,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
