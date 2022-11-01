@@ -25,6 +25,10 @@ public class GameManager : MonoBehaviour
     {
         Player.transform.position = RespawnPlace;
     }
+    public void Respawn()
+    {
+        Player.transform.position = RespawnPlace;
+    }
 
     public void SetNewRespawnPlace(GameObject newPlace)//This is 
     {
