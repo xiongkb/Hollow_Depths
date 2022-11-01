@@ -12,6 +12,7 @@ TagManager:
   - Oxygen
   - UnderWater
   - Water
+  - Weapon
   layers:
   - Default
   - TransparentFX
