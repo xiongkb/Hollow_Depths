@@ -154,9 +154,10 @@ GameObject:
   - component: {fileID: 7770165528816671887}
   - component: {fileID: 7770165528816671884}
   - component: {fileID: 7770165528816671885}
+  - component: {fileID: 4752039190874043388}
   m_Layer: 0
   m_Name: Jellyfish_0
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -266,6 +267,22 @@ MonoBehaviour:
   EnemyReturnSpeed: 0
   returnPosition: {x: 0, y: 0, z: 0}
   state: 1
+--- !u!58 &4752039190874043388
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7770165528816671883}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.010820866, y: 0.043281555}
+  serializedVersion: 2
+  m_Radius: 0.45491648
 --- !u!1 &7770165529104667153
 GameObject:
   m_ObjectHideFlags: 0
