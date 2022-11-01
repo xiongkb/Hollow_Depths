@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using System;
 
 public class CollectibleManager : MonoBehaviour
 {
-    [SerializeField] private Text collectibles;
+    [SerializeField] private TMP_Text collectibles;
     [SerializeField] private int collected;
 
     // Start is called before the first frame update
