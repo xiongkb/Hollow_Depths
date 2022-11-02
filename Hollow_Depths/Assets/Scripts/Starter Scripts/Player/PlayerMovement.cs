@@ -36,6 +36,11 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("This should be checked if your character has Multi-Directional movement (IE up, down, left, right) and your animator is set up accordingly")]
     public bool isMultiDirectional = false;
 
+   // Swimmming added
+    [Tooltip("If you want player to swim underwater")]
+    public bool isSwimming = false;
+//
+
     [Tooltip("If you want audio to be used alongside this object")]
     public bool isAudioEnabled = true;
 
@@ -149,7 +154,22 @@ public class PlayerMovement : MonoBehaviour
             HandlePlayerOrientation(HorizontalMovement);
         }
     }
+    //swiming handle
+           private void HandleSwimming(float HorizontalMovement, float VerticleMovement)
+    {
+        bool SwimmingInputDetected = (HorizontalMovement != 0 || VerticleMovement != 0);
+        if (SwimmingInputDetected)
+        {
+            PlayerAnimator.SetBool("isSwimming", true);
+        }
+        else
+        {
+            PlayerAnimator.SetBool("isSwimming", false);
+        }
 
+        HandleAttackAnimation(HorizontalMovement, VerticleMovement);
+    }
+//
     private void HandleAnimations1D(float HorizontalMovement, float VerticleMovement)
     {
         bool MovementInputDetected = (HorizontalMovement != 0 || VerticleMovement != 0);
@@ -212,6 +232,32 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
+    //Kang Attempt to Swim Movement + Trigger
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+       if (collision.CompareTag("Water"))
+       {
+             {
+                PlayerAnimator.SetBool("isSwimming", true);
+            }
+        
+       }
+    }
+
+    //Kang Swim exit when Nami is out of the water collision area to reset mack to regular movment
+    private void OnTriggerExit2D(Collider2D collision) {
+
+        if (collision.gameObject.tag == "Water")
+        {
+             {
+                PlayerAnimator.SetBool("isSwimming", false);
+            }
+
+        }
+    
+    }
+//
     void HandleJumpAnimation()
     {
         if (canJump)
@@ -314,7 +360,25 @@ public class PlayerMovement : MonoBehaviour
     #endregion
 
     #region Audio
-
+//swimming
+         void HandlePlayerSwimmingAudio(float HorizontalMovement, float VerticleMovement)
+    {
+        if (PlayerAnimator.GetBool("isSwimming"))
+        {
+            if (!playerAudio.WalkSource.isPlaying && playerAudio.WalkSource.clip != null)
+            {
+                playerAudio.WalkSource.Play();
+            }
+        }
+        else
+        {
+            if (playerAudio.WalkSource.isPlaying && playerAudio.WalkSource.clip != null)
+            {
+                playerAudio.WalkSource.Stop();
+            }
+        }
+    }
+//
     void HandleAudio(float HorizontalMovement, float VerticleMovement)
     {
         if (isAudioEnabled && playerAudio!=null)
