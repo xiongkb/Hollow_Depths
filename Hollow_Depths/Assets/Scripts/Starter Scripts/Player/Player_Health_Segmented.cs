@@ -7,6 +7,7 @@ public class Player_Health_Segmented : MonoBehaviour {
     // InstaDeath objects should be tagged "Death" and set as a trigger
     // Enemies (and other 1-damage obstacles) should be tagged "Enemy" and should NOT be set as a trigger
 
+    //public AudioManager audioManager; 
     private GameObject respawn;
 
     private int playerScore;
@@ -28,17 +29,13 @@ public class Player_Health_Segmented : MonoBehaviour {
     private GameObject Water;
 
 
-
-
-
-
-
     // Use this for initialization
     void Start()
     {
         respawn = GameObject.FindGameObjectWithTag("Respawn");
         Player = GameObject.FindGameObjectWithTag("Player");
         Water = GameObject.FindGameObjectWithTag("Water");
+        //audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         //  playerScore = 0;
         //  scoreText.text = playerScore.ToString("D4");
 
@@ -98,39 +95,13 @@ public class Player_Health_Segmented : MonoBehaviour {
     {
         // For more health, copy the if block for health3, change health3 to whatever yours is,
         // then change the if statement for health3 to else if
-        /*  if (health3.activeInHierarchy)
-          {
-              health3.SetActive(false);
-          }
-          else if (health2.activeInHierarchy)
-          {
-              health2.SetActive(false);
-          }
-          else
-          {
-              health1.SetActive(false);
-              Respawn();
-          } */
 
+        //FindObjectOfType<AudioManager>().Play("Ding");
 
-        /* if (CurrentHealth == 3)
-        {
-            health3.SetActive(false);
-            CurrentHealth--;
-        }
-        else if (CurrentHealth == 2)
-        {
-            health2.SetActive(false);
-            CurrentHealth--;
-        }
-        else if (CurrentHealth == 1)
-        {
-            health1.SetActive(false);
-            CurrentHealth--;
-        }
-        else {
-            Respawn();
-        } */
+        //GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Ding");
+
+        //audioManager.Play("Ding");
+
         --CurrentHealth;
 
         if (CurrentHealth == 2)
