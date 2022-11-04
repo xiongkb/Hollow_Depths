@@ -7,6 +7,7 @@ public class Player_Health_Segmented : MonoBehaviour {
     // InstaDeath objects should be tagged "Death" and set as a trigger
     // Enemies (and other 1-damage obstacles) should be tagged "Enemy" and should NOT be set as a trigger
 
+    //private AudioManager audioManager; 
     private GameObject respawn;
 
     private int playerScore;
@@ -27,11 +28,7 @@ public class Player_Health_Segmented : MonoBehaviour {
     private GameObject Player;
     private GameObject Water;
 
-
-
-
-
-
+    public PlayerAudio playerAudio;
 
     // Use this for initialization
     void Start()
@@ -39,6 +36,14 @@ public class Player_Health_Segmented : MonoBehaviour {
         respawn = GameObject.FindGameObjectWithTag("Respawn");
         Player = GameObject.FindGameObjectWithTag("Player");
         Water = GameObject.FindGameObjectWithTag("Water");
+
+        playerAudio = GetComponent<PlayerAudio>();
+        
+
+        //audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
+        //Debug.Log(audioManager);
+
         //  playerScore = 0;
         //  scoreText.text = playerScore.ToString("D4");
 
@@ -76,7 +81,29 @@ public class Player_Health_Segmented : MonoBehaviour {
             Destroy(collision.gameObject);
         }
 
+        else if (collision.CompareTag("Collection"))
+        {
+            playerAudio.CollectSource.Play();
+        }
 
+        else if (collision.CompareTag("Water"))
+        {
+            playerAudio.LoopBreathingAudio = true;
+            playerAudio.BreathingSource.Play();
+           
+        }
+
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Water"))
+        {
+            playerAudio.BreathingSource.Stop();
+            playerAudio.LoopBreathingAudio = false;
+           
+
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -98,39 +125,15 @@ public class Player_Health_Segmented : MonoBehaviour {
     {
         // For more health, copy the if block for health3, change health3 to whatever yours is,
         // then change the if statement for health3 to else if
-        /*  if (health3.activeInHierarchy)
-          {
-              health3.SetActive(false);
-          }
-          else if (health2.activeInHierarchy)
-          {
-              health2.SetActive(false);
-          }
-          else
-          {
-              health1.SetActive(false);
-              Respawn();
-          } */
 
+        //FindObjectOfType<AudioManager>().Play("Ding");
 
-        /* if (CurrentHealth == 3)
-        {
-            health3.SetActive(false);
-            CurrentHealth--;
-        }
-        else if (CurrentHealth == 2)
-        {
-            health2.SetActive(false);
-            CurrentHealth--;
-        }
-        else if (CurrentHealth == 1)
-        {
-            health1.SetActive(false);
-            CurrentHealth--;
-        }
-        else {
-            Respawn();
-        } */
+        //GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Ding");
+
+        //audioManager.Play("Ding");
+
+        playerAudio.DamageSource.Play();
+
         --CurrentHealth;
 
         if (CurrentHealth == 2)

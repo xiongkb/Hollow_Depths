@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Camera))]
 public class CameraMovement : MonoBehaviour
@@ -22,6 +23,16 @@ public class CameraMovement : MonoBehaviour
     [Tooltip("This is the speed at which the camera follows the player, the smaller the value, the faster the movement")]
     public float smoothSpeed = 0.125f; //The bigger the value, the faster the smooth
 
+    [Header("Background Music")]
+    [Header("Suspense Sound")]
+    public AudioClip SuspenseAudioClip;
+    [HideInInspector] public AudioSource SuspenseSource;
+    public bool LoopSuspenseAudio = true;
+    public bool PlayOnAwakeSuspenseAudio = true;
+    [Range(0, 1)]
+    public float SuspenseVolumeLevel = 1;
+
+
 
     private Vector3 Velocity = Vector3.zero;//This is just something we use as a reference for the smoothdamp
     private Camera camera;//This is the camera we using, it's gonna be handled in start
@@ -34,6 +45,24 @@ public class CameraMovement : MonoBehaviour
         }
 
         camera = GetComponent<Camera>();
+
+
+        GameObject SuspenseGameObject = new GameObject("SuspenseAudioSource");
+        SuspenseGameObject.transform.parent = SuspenseGameObject.transform;
+        SuspenseSource = SuspenseGameObject.AddComponent<AudioSource>();
+        SuspenseSource.clip = SuspenseAudioClip;
+        SuspenseSource.playOnAwake = PlayOnAwakeSuspenseAudio;
+
+        Scene scene = SceneManager.GetActiveScene();
+
+        if (scene.name == "Ship_Wreck")
+        {
+            // AudioSource SuspenseSound = SuspenseSource;
+            SuspenseSource.Play();
+        }
+        //Debug.Log("Active Scene is '" + scene.name + "'.");
+
+
     }
 
     // Update is called once per frame
@@ -57,5 +86,25 @@ public class CameraMovement : MonoBehaviour
                 transform.position = new Vector3(x, y, gameObject.transform.position.z);
             }
         }
+
+        
+
+
     }
+
+    /*void OnEnable()
+    {
+        // Debug.Log("OnEnable called");
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "Ship_Wreck")
+        {
+            SuspenseSource.Play();
+        }
+        Scene scene = SceneManager.GetActiveScene();
+    }
+    */
 }
