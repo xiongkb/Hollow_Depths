@@ -1845,7 +1845,6 @@ GameObject:
   - component: {fileID: 218089339}
   - component: {fileID: 218089337}
   - component: {fileID: 218089341}
-  - component: {fileID: 218089342}
   - component: {fileID: 218089338}
   - component: {fileID: 218089343}
   - component: {fileID: 218089345}
@@ -2062,24 +2061,6 @@ MonoBehaviour:
   invisImagePrefab: {fileID: 2311413204403214685, guid: 27bee799bc63d0a4396a9677e9167132, type: 3}
   inventoryImageEmpty: {fileID: 351522175}
   padding: 0
---- !u!114 &218089342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 218089334}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab016ef86d2a5e143be1580af9e24830, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 3
-  currentHealth: 3
-  HealthIcons: {fileID: 0}
-  HealthBar: {fileID: 0}
-  useHealthBar: 0
-  index: 0
 --- !u!114 &218089343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2146,22 +2127,22 @@ MonoBehaviour:
   WalkAudioClip: {fileID: 0}
   LoopWalkAudio: 0
   WalkVolumeLevel: 1
-  AttackAudioClip: {fileID: 8300000, guid: 8d5bec183a4b7224aacf4794f639968a, type: 3}
+  AttackAudioClip: {fileID: 0}
   LoopAttackAudio: 0
   AttackVolumeLevel: 1
-  DeathAudioClip: {fileID: 8300000, guid: 8d5bec183a4b7224aacf4794f639968a, type: 3}
+  DeathAudioClip: {fileID: 0}
   LoopDeathAudio: 0
   DeathVolumeLevel: 1
   JumpAudioClip: {fileID: 0}
   LoopJumpAudio: 0
   JumpVolumeLevel: 1
-  CollectAudioClip: {fileID: 8300000, guid: 8d5bec183a4b7224aacf4794f639968a, type: 3}
+  CollectAudioClip: {fileID: 0}
   LoopCollectAudio: 0
   CollectVolumeLevel: 1
-  DamageAudioClip: {fileID: 8300000, guid: 8d5bec183a4b7224aacf4794f639968a, type: 3}
+  DamageAudioClip: {fileID: 0}
   LoopDamageAudio: 0
   DamageVolumeLevel: 1
-  BreathingAudioClip: {fileID: 8300000, guid: 8d5bec183a4b7224aacf4794f639968a, type: 3}
+  BreathingAudioClip: {fileID: 0}
   LoopBreathingAudio: 0
   BreathingVolumeLevel: 1
   WalkSource: {fileID: 0}
@@ -40356,122 +40337,6 @@ MonoBehaviour:
   keyID: 0
   useKeyName: 1
   useKeyID: 0
---- !u!1001 &599113778843547498
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5044941250868507053, guid: c21284a30cd68a24a8b08413f7e20481, type: 3}
-      propertyPath: m_Name
-      value: AudioManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 5044941250868507053, guid: c21284a30cd68a24a8b08413f7e20481, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5044941250868507053, guid: c21284a30cd68a24a8b08413f7e20481, type: 3}
-      propertyPath: m_TagString
-      value: Audio
-      objectReference: {fileID: 0}
-    - target: {fileID: 5044941250868507053, guid: c21284a30cd68a24a8b08413f7e20481, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5442548582965518365, guid: c21284a30cd68a24a8b08413f7e20481, type: 3}
-      propertyPath: sounds.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5442548582965518365, guid: c21284a30cd68a24a8b08413f7e20481, type: 3}
-      propertyPath: sounds.Array.data[0].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 8d5bec183a4b7224aacf4794f639968a, type: 3}
-    - target: {fileID: 5442548582965518365, guid: c21284a30cd68a24a8b08413f7e20481, type: 3}
-      propertyPath: sounds.Array.data[0].name
-      value: Ding
-      objectReference: {fileID: 0}
-    - target: {fileID: 5442548582965518365, guid: c21284a30cd68a24a8b08413f7e20481, type: 3}
-      propertyPath: sounds.Array.data[0].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5442548582965518365, guid: c21284a30cd68a24a8b08413f7e20481, type: 3}
-      propertyPath: sounds.Array.data[0].playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6805681078709378602, guid: c21284a30cd68a24a8b08413f7e20481, type: 3}
-      propertyPath: m_RootOrder
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 6805681078709378602, guid: c21284a30cd68a24a8b08413f7e20481, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -11.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 6805681078709378602, guid: c21284a30cd68a24a8b08413f7e20481, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.49
-      objectReference: {fileID: 0}
-    - target: {fileID: 6805681078709378602, guid: c21284a30cd68a24a8b08413f7e20481, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.5737946
-      objectReference: {fileID: 0}
-    - target: {fileID: 6805681078709378602, guid: c21284a30cd68a24a8b08413f7e20481, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6805681078709378602, guid: c21284a30cd68a24a8b08413f7e20481, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6805681078709378602, guid: c21284a30cd68a24a8b08413f7e20481, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6805681078709378602, guid: c21284a30cd68a24a8b08413f7e20481, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6805681078709378602, guid: c21284a30cd68a24a8b08413f7e20481, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6805681078709378602, guid: c21284a30cd68a24a8b08413f7e20481, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6805681078709378602, guid: c21284a30cd68a24a8b08413f7e20481, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5442548582965518365, guid: c21284a30cd68a24a8b08413f7e20481, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: c21284a30cd68a24a8b08413f7e20481, type: 3}
---- !u!1 &599113778843547499 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5044941250868507053, guid: c21284a30cd68a24a8b08413f7e20481, type: 3}
-  m_PrefabInstance: {fileID: 599113778843547498}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &599113778843547500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 599113778843547499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7aeffc7d52a51c44bcb998fcd2daeac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - name: Ding
-    clip: {fileID: 8300000, guid: 8d5bec183a4b7224aacf4794f639968a, type: 3}
-    volume: 1
-    pitch: 0
-    loop: 1
-    playOnAwake: 0
-    source: {fileID: 0}
-  play: 0
 --- !u!1 &965006867136485844
 GameObject:
   m_ObjectHideFlags: 0
