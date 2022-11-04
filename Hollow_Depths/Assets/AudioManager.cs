@@ -7,6 +7,8 @@ public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
 
+    public bool play;
+
     public static AudioManager instance;
     /*[HideInInspector]
     public bool AudioIsPlaying = false;
@@ -117,10 +119,20 @@ public class AudioManager : MonoBehaviour
      public void Play(string name)
      {
          Sound s = CheckSound(name);
-
+        Debug.Log("Sound: " + s);
          if (s != null) s.source.Play();
      }
     
+    void Update()
+    {
+        if (play)
+        {
+            Play("Ding");
+
+            
+        }
+    }
+
 }
 
 

@@ -9,8 +9,9 @@ public class BubbleTrigger : MonoBehaviour
     private GameObject Player;
     private IEnumerator Counter;
     private int BubbleCount;
+    //public GameObject Particle effect; bubble UI
+
     
-    [SerializeField] private GameObject displayed;
     void Start()
     {
         Bubbles.SetActive(false);

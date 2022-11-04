@@ -7,7 +7,7 @@ public class Player_Health_Segmented : MonoBehaviour {
     // InstaDeath objects should be tagged "Death" and set as a trigger
     // Enemies (and other 1-damage obstacles) should be tagged "Enemy" and should NOT be set as a trigger
 
-    //public AudioManager audioManager; 
+    //private AudioManager audioManager; 
     private GameObject respawn;
 
     private int playerScore;
@@ -28,6 +28,7 @@ public class Player_Health_Segmented : MonoBehaviour {
     private GameObject Player;
     private GameObject Water;
 
+    public PlayerAudio playerAudio;
 
     // Use this for initialization
     void Start()
@@ -35,7 +36,14 @@ public class Player_Health_Segmented : MonoBehaviour {
         respawn = GameObject.FindGameObjectWithTag("Respawn");
         Player = GameObject.FindGameObjectWithTag("Player");
         Water = GameObject.FindGameObjectWithTag("Water");
-        //audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+
+        playerAudio = GetComponent<PlayerAudio>();
+        
+
+        //audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
+        //Debug.Log(audioManager);
+
         //  playerScore = 0;
         //  scoreText.text = playerScore.ToString("D4");
 
@@ -73,7 +81,29 @@ public class Player_Health_Segmented : MonoBehaviour {
             Destroy(collision.gameObject);
         }
 
+        else if (collision.CompareTag("Collection"))
+        {
+            playerAudio.CollectSource.Play();
+        }
 
+        else if (collision.CompareTag("Water"))
+        {
+            playerAudio.LoopBreathingAudio = true;
+            playerAudio.BreathingSource.Play();
+           
+        }
+
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Water"))
+        {
+            playerAudio.BreathingSource.Stop();
+            playerAudio.LoopBreathingAudio = false;
+           
+
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -101,6 +131,8 @@ public class Player_Health_Segmented : MonoBehaviour {
         //GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Ding");
 
         //audioManager.Play("Ding");
+
+        playerAudio.DamageSource.Play();
 
         --CurrentHealth;
 
