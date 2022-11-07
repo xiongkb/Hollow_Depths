@@ -2539,7 +2539,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218089334}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.38, y: -0.12, z: 0}
+  m_LocalPosition: {x: -7.37, y: -1.68, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2750,7 +2750,7 @@ MonoBehaviour:
   WalkAudioClip: {fileID: 0}
   LoopWalkAudio: 0
   WalkVolumeLevel: 1
-  AttackAudioClip: {fileID: 0}
+  AttackAudioClip: {fileID: 8300000, guid: b7ed291df71890641acd0a4921d287fe, type: 3}
   LoopAttackAudio: 0
   AttackVolumeLevel: 1
   DeathAudioClip: {fileID: 0}
