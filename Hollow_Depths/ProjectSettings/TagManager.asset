@@ -52,6 +52,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Fishes
+    uniqueID: 1754342113
+    locked: 0
   - name: Walls
     uniqueID: 2305283431
     locked: 0
