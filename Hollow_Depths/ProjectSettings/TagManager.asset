@@ -15,6 +15,7 @@ TagManager:
   - Weapon
   - Audio
   - Collection
+  - SceneManager
   layers:
   - Default
   - TransparentFX

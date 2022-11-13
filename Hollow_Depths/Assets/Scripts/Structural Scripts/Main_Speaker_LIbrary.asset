@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerLibrary:
   - name: Nami
-    sprite: {fileID: -291938102, guid: d1550831a390f4bb5b4d9ce1bdf55758, type: 3}
+    sprite: {fileID: 21300000, guid: 99d61a6df9bf39845993f357be5b706b, type: 3}
