@@ -8108,9 +8108,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerAnimator: {fileID: 218089337}
   playerAudio: {fileID: 0}
-  playerAttack: {fileID: 0}
-  gm: {fileID: 0}
-  gsm: {fileID: 0}
+  playerAttack: {fileID: 218089346}
+  gm: {fileID: 693733177}
+  gsm: {fileID: 693733176}
   PlayerMovementSpeed: 3.5
   jumpForce: 6
   numberOfJumps: 1
