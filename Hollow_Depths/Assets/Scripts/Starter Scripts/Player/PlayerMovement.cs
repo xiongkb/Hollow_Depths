@@ -64,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumping = false;
     private bool canRayCastJump = false;
 
+    public GameObject Axe_PlaceHolder;
     
 
     float lastVelocity = 1;
@@ -193,7 +194,9 @@ public class PlayerMovement : MonoBehaviour
 
     void HandleAttackAnimation(float HorizontalMovement, float VerticleMovement)
     {
-        if (Input.GetKey(KeyCode.Mouse0) && !disabled)
+        Axe_PlaceHolder = GameObject.Find("Axe_PlaceHolder");
+
+        if (Input.GetKey(KeyCode.Mouse0) && !disabled && !Axe_PlaceHolder)
         {
             if (!PlayerAnimator.GetBool("isAttacking"))
             {

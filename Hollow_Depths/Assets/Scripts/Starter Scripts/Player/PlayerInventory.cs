@@ -47,8 +47,10 @@ public class PlayerInventory : MonoBehaviour
         {
             AddItemToUI(newItem);
         }
-
+        
     }
+
+
 
     public void RemoveItemFromInventory(Item item)
     {
