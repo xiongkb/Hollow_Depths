@@ -618,7 +618,7 @@ GameObject:
   - component: {fileID: 354885143}
   - component: {fileID: 354885142}
   - component: {fileID: 354885141}
-  - component: {fileID: 354885140}
+  - component: {fileID: 354885144}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -647,18 +647,6 @@ RectTransform:
   m_AnchoredPosition: {x: 563, y: -307}
   m_SizeDelta: {x: 211.97, y: 39.744}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &354885140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 354885138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46e32442358b5d94ca52f7a92a1cee38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &354885141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -703,10 +691,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 354885140}
-        m_TargetAssemblyTypeName: LoadSceneOnClick, Assembly-CSharp
-        m_MethodName: LoadByIndex
-        m_Mode: 3
+      - m_Target: {fileID: 354885144}
+        m_TargetAssemblyTypeName: QuitOnClick, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -753,6 +741,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 354885138}
   m_CullTransparentMesh: 1
+--- !u!114 &354885144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354885138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da6a2c940d475b4abfc1c30e9774a88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &405924934
 GameObject:
   m_ObjectHideFlags: 0
