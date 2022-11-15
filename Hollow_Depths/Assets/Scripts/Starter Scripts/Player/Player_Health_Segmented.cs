@@ -93,6 +93,11 @@ public class Player_Health_Segmented : MonoBehaviour {
            
         }
 
+        else if (collision.CompareTag("Oxygen"))
+        {
+            playerAudio.BubblesSource.Play();
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
