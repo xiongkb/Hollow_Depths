@@ -8630,7 +8630,7 @@ MonoBehaviour:
   CollectAudioClip: {fileID: 8300000, guid: b1cf6ea0001b901449acc58ba4c1aac7, type: 3}
   LoopCollectAudio: 0
   CollectVolumeLevel: 0.48
-  DamageAudioClip: {fileID: 0}
+  DamageAudioClip: {fileID: 8300000, guid: a0ec22271a2fa434b8210567c1e5a0da, type: 3}
   LoopDamageAudio: 0
   DamageVolumeLevel: 1
   BubblesAudioClip: {fileID: 8300000, guid: 01da63e95e4d7944498e10523f219587, type: 3}
