@@ -16,7 +16,7 @@ public class LockedObject : MonoBehaviour
 
     [Header("Key Info")]
     [Tooltip("Name of the key that is required to unlock the gameObject")]
-    public string keyName = "";
+    public string keyName = "Axe";
     [Tooltip("ID of the key that is required to unlock the gameObject")]
     public int keyID = 0;
 
