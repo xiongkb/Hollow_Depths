@@ -1617,6 +1617,7 @@ MonoBehaviour:
   blastPrefab: {fileID: 6075939745044416489, guid: 8af466c2986cf95439b3804b616eded4, type: 3}
   direction: {x: 0, y: 0}
   bullet: {fileID: 240381181570082622, guid: 8af466c2986cf95439b3804b616eded4, type: 3}
+  netCanon: {fileID: 0}
   shootingSound: {fileID: 218089350}
 --- !u!1 &224665440
 GameObject:
