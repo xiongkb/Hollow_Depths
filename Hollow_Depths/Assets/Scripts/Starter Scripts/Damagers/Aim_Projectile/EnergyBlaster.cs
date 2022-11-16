@@ -10,6 +10,9 @@ public class EnergyBlaster : MonoBehaviour
     public Vector2 direction;
     public Blast bullet;
 
+    //item for net canon
+    public GameObject netCanon;
+
     // Optional to play sound when firing projectile
     public AudioSource shootingSound;
 
@@ -19,7 +22,10 @@ public class EnergyBlaster : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        //if obtain weapon first, then unlock(?)
+        netCanon = GameObject.Find("Net Canon");
+
+        if (Input.GetMouseButtonDown(1) && !netCanon)
         {
             Vector2 target = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
             Vector2 myPos = new Vector2(transform.position.x, transform.position.y + 1);

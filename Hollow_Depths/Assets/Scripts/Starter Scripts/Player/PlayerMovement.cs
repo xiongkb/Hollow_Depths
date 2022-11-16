@@ -194,6 +194,7 @@ public class PlayerMovement : MonoBehaviour
 
     void HandleAttackAnimation(float HorizontalMovement, float VerticleMovement)
     {
+        //Kang attempt if gameObjec no loonger exist on scene, then player is allowed to attack
         Axe_PlaceHolder = GameObject.Find("Axe_PlaceHolder");
 
         if (Input.GetKey(KeyCode.Mouse0) && !disabled && !Axe_PlaceHolder)
