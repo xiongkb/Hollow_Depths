@@ -7,7 +7,10 @@ public class StayDeactivated : MonoBehaviour
     [SerializeField] private GameObject displayed;
     void Start()
     {
+        if (CompareTag("Collection"))
+       {
         displayed.SetActive(true);
+       }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
