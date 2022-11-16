@@ -43,6 +43,12 @@ public class PlayerAudio : MonoBehaviour
     [Range(0, 1)]
     public float DamageVolumeLevel = 1;
 
+    [Header("Bubbles")]
+    public AudioClip BubblesAudioClip;
+    public bool LoopBubblesAudio = false;
+    [Range(0, 1)]
+    public float BubblesVolumeLevel = 1;
+
     [Header("Breathing")]
     public AudioClip BreathingAudioClip;
     public bool LoopBreathingAudio = false;
@@ -57,6 +63,7 @@ public class PlayerAudio : MonoBehaviour
 
     [HideInInspector] public AudioSource CollectSource;
     [HideInInspector] public AudioSource DamageSource;
+    [HideInInspector] public AudioSource BubblesSource;
     [HideInInspector] public AudioSource BreathingSource;
     //The whole [HideInInspector] thing just makes it so that way you can't see these public variables in editor
 
@@ -76,6 +83,7 @@ public class PlayerAudio : MonoBehaviour
 
         GameObject CollectGameObject = new GameObject("CollectAudioSource"); //collection
         GameObject DamageGameObject = new GameObject("DamageAudioSource"); //loose health
+        GameObject BubblesGameObject = new GameObject("BubblesAudioSource"); //Collect bubbles
         GameObject BreathingGameObject = new GameObject("BreathingAudioSource"); //Breathing under water
 
         //Next you have to Assign the parent so it's all organized
@@ -86,6 +94,7 @@ public class PlayerAudio : MonoBehaviour
 
         AssignParent(CollectGameObject);
         AssignParent(DamageGameObject);
+        AssignParent(BubblesGameObject); 
         AssignParent(BreathingGameObject);
 
         //Then you have to add the actual audiosource to each gameobject
@@ -96,6 +105,7 @@ public class PlayerAudio : MonoBehaviour
 
         CollectSource = CollectGameObject.AddComponent<AudioSource>();
         DamageSource = DamageGameObject.AddComponent<AudioSource>();
+        BubblesSource = BubblesGameObject.AddComponent<AudioSource>();
         BreathingSource = BreathingGameObject.AddComponent<AudioSource>();
 
         //And finally you assign the clip to the audio source
@@ -106,6 +116,7 @@ public class PlayerAudio : MonoBehaviour
 
         CollectSource.clip = CollectAudioClip;
         DamageSource.clip = DamageAudioClip;
+        BubblesSource.clip = BubblesAudioClip;
         BreathingSource.clip = BreathingAudioClip;
 
         //And here is just where we assign the global volume level, you can make these individualized if you want
@@ -116,6 +127,7 @@ public class PlayerAudio : MonoBehaviour
 
         CollectSource.volume = CollectVolumeLevel;
         DamageSource.volume = DamageVolumeLevel;
+        BubblesSource.volume = BubblesVolumeLevel;
         BreathingSource.volume = BreathingVolumeLevel;
 
         WalkSource.loop = LoopWalkAudio;
@@ -125,6 +137,7 @@ public class PlayerAudio : MonoBehaviour
 
         CollectSource.loop = LoopCollectAudio;
         DamageSource.loop = LoopDamageAudio;
+        BubblesSource.loop = LoopBubblesAudio;
         BreathingSource.loop = LoopBreathingAudio;
     }
 
