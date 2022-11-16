@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GameAssets5_0
+      name: Bathroom Mirror
       rect:
         serializedVersion: 2
         x: 0
@@ -113,7 +113,7 @@ TextureImporter:
         width: 660
         height: 367
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -126,15 +126,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GameAssets5_1
+      name: Tissue Holder
       rect:
         serializedVersion: 2
         x: 55
-        y: 514
+        y: 512
         width: 145
         height: 82
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -150,12 +150,12 @@ TextureImporter:
       name: GameAssets5_2
       rect:
         serializedVersion: 2
-        x: 44
+        x: 42
         y: 359
         width: 172
         height: 57
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -168,7 +168,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GameAssets5_3
+      name: Tub
       rect:
         serializedVersion: 2
         x: 339
@@ -176,7 +176,7 @@ TextureImporter:
         width: 617
         height: 581
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -200,9 +200,9 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       GameAssets5_2: -655964119
-      GameAssets5_1: 310308269
-      GameAssets5_0: 1441551530
-      GameAssets5_3: 219730341
+      Tissue Holder: 310308269
+      Bathroom Mirror: 1441551530
+      Tub: 219730341
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
