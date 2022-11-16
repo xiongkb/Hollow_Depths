@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GameAssets4_0
+      name: Sink
       rect:
         serializedVersion: 2
         x: 339
@@ -113,7 +113,7 @@ TextureImporter:
         width: 173
         height: 157
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -126,7 +126,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GameAssets4_1
+      name: Wall decor
       rect:
         serializedVersion: 2
         x: 262
@@ -134,7 +134,7 @@ TextureImporter:
         width: 64
         height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,7 +147,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GameAssets4_2
+      name: Plunder
       rect:
         serializedVersion: 2
         x: 235
@@ -155,7 +155,7 @@ TextureImporter:
         width: 89
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -168,7 +168,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GameAssets4_3
+      name: Bathroom mirror
       rect:
         serializedVersion: 2
         x: 29
@@ -176,7 +176,7 @@ TextureImporter:
         width: 181
         height: 109
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,7 +189,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GameAssets4_4
+      name: Bathroom Vanity Light
       rect:
         serializedVersion: 2
         x: 29
@@ -197,7 +197,7 @@ TextureImporter:
         width: 184
         height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -220,11 +220,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GameAssets4_2: -1505717853
-      GameAssets4_4: -152633325
-      GameAssets4_0: 619391171
-      GameAssets4_1: 69130508
-      GameAssets4_3: -930353028
+      Bathroom mirror: -930353028
+      Plunder: -1505717853
+      Bathroom Vanity Light: -152633325
+      Sink: 619391171
+      Wall decor: 69130508
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
