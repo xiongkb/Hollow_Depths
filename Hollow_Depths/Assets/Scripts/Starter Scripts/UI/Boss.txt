@@ -1,0 +1,1 @@
+[NAME=Nami][SPEAKERSPRITE=Nami]I need a key. I think it's in the cabin.
