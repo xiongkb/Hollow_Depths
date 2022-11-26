@@ -341,7 +341,7 @@ public class PlayerMovement : MonoBehaviour
         
             PlayerAnimator.SetBool("isSwimming", false);
             useRayCastJumping = false;
-        
+            canJump = true;
 
         }
     
