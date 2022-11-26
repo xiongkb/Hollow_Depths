@@ -11,7 +11,7 @@ public class EnergyBlaster : MonoBehaviour
     public Blast bullet;
 
     //item for net canon
-    public GameObject netCanon;
+    private GameObject netCanon;
 
     // Optional to play sound when firing projectile
     public AudioSource shootingSound;
