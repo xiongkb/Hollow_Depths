@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6789072896972491379}
   - component: {fileID: 6789072896972491380}
   - component: {fileID: 97247505}
-  - component: {fileID: -2194503244401466903}
+  - component: {fileID: 1052439934}
   m_Layer: 0
   m_Name: FirstAidKit
   m_TagString: Health
@@ -128,7 +128,7 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.05
   frequency: 2
---- !u!114 &-2194503244401466903
+--- !u!114 &1052439934
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
