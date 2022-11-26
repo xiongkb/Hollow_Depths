@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumping = false;
     private bool canRayCastJump = false;
 
-    public GameObject Axe_PlaceHolder;
+    private GameObject Axe_PlaceHolder;
     
 
     float lastVelocity = 1;
