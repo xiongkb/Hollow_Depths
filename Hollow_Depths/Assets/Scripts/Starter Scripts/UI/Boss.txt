@@ -1,1 +1,3 @@
-[NAME=Nami][SPEAKERSPRITE=Nami]I need a key. I think it's in the cabin.
+[NAME=Nami][SPEAKERSPRITE=Nami]I finally made it out here.
+[NAME=Nami][SPEAKERSPRITE=Nami]I know there's a life boat on the other side.
+[NAME=Nami][SPEAKERSPRITE=Nami]If I can find the key, I can get out of here!

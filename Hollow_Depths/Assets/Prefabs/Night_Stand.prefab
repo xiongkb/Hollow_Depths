@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1354822621695918076}
   - component: {fileID: 3971450419023396747}
   - component: {fileID: 3791212134323058921}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Night_Stand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
