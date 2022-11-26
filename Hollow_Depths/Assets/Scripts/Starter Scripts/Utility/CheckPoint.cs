@@ -14,6 +14,7 @@ public class CheckPoint : MonoBehaviour
             if (temp != null)
             {
                 temp.SetNewRespawnPlace(collision.gameObject);
+                Debug.Log("Checkpoint: found!");
             }
             else
             {
@@ -31,6 +32,7 @@ public class CheckPoint : MonoBehaviour
             if (temp != null)
             {
                 temp.SetNewRespawnPlace(collision.gameObject);
+                Debug.Log("Checkpoint: found!");
             }
             else
             {
