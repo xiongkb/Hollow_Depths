@@ -7,7 +7,7 @@ public class StayDeactivated : MonoBehaviour
     [SerializeField] private GameObject displayed;
     void Start()
     {
-        if (CompareTag("Collection"))
+        if (CompareTag("Axe_Holder"))
        {
         displayed.SetActive(true);
        }
@@ -17,15 +17,17 @@ public class StayDeactivated : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            displayed.SetActive(false);
+            //displayed.SetActive(false);
+            Destroy(gameObject);
+            
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            displayed.SetActive(false);
-        }
-    }
+    // private void OnTriggerExit2D(Collider2D collision)
+    // {
+    //     if (collision.CompareTag("Player"))
+    //     {
+    //         displayed.SetActive(false);
+    //     }
+    // }
 }
