@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8287800210558302928}
   - component: {fileID: 4409029898292314180}
   - component: {fileID: 5291468403848764221}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: broken shelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1700909171
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: bcc96c085028970468be2f376a9c9dc5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
