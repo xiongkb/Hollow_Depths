@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cbe3503124994a4fb36165756840e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 10
   isLoop: 1
   PathNodes: []
   nextPos: {fileID: 0}
