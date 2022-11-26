@@ -1199,7 +1199,6 @@ GameObject:
   m_Component:
   - component: {fileID: 218089336}
   - component: {fileID: 218089335}
-  - component: {fileID: 218089340}
   - component: {fileID: 218089339}
   - component: {fileID: 218089337}
   - component: {fileID: 218089341}
@@ -1210,6 +1209,7 @@ GameObject:
   - component: {fileID: 218089348}
   - component: {fileID: 218089349}
   - component: {fileID: 218089351}
+  - component: {fileID: 218089352}
   m_Layer: 0
   m_Name: Nami
   m_TagString: Player
@@ -1360,22 +1360,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &218089340
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 218089334}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.00330472, y: -0.0559372}
-  m_Size: {x: 0.41836977, y: 0.8881256}
-  m_Direction: 0
 --- !u!114 &218089341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1598,6 +1582,46 @@ MonoBehaviour:
   bullet: {fileID: 240381181570082622, guid: 8af466c2986cf95439b3804b616eded4, type: 3}
   netCanon: {fileID: 0}
   shootingSound: {fileID: 0}
+--- !u!60 &218089352
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218089334}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.10320115, y: -0.39860535}
+      - {x: 0.1016407, y: -0.18642998}
+      - {x: 0.10558605, y: 0.017185211}
+      - {x: 0.18906039, y: 0.15772152}
+      - {x: 0.18297529, y: 0.32730007}
+      - {x: 0.10460499, y: 0.40542507}
+      - {x: -0.018500447, y: 0.4197359}
+      - {x: -0.1424306, y: 0.38026047}
+      - {x: -0.2624154, y: 0.36200523}
+      - {x: -0.20756084, y: 0.051979065}
+      - {x: -0.08251262, y: -0.29501343}
+      - {x: -0.09078562, y: -0.4607029}
+      - {x: -0.040121704, y: -0.49473953}
+      - {x: 0.07961786, y: -0.50954056}
+      - {x: 0.09604615, y: -0.46183968}
 --- !u!1 &224665440
 GameObject:
   m_ObjectHideFlags: 0
