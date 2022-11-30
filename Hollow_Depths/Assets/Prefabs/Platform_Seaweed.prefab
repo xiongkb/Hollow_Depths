@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4192825949449258409}
   - component: {fileID: 4192825949449258422}
-  - component: {fileID: 4192825949449258408}
+  - component: {fileID: 7835575266891181827}
   m_Layer: 8
   m_Name: Platform_Seaweed
   m_TagString: Untagged
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1700909171
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 98275ed10b49440ff97291a2243a698b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4192825949449258408
+--- !u!61 &7835575266891181827
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

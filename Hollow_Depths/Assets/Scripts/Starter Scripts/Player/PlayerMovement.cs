@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumping = false;
     private bool canRayCastJump = false;
 
-    public GameObject Axe_PlaceHolder;
+    private GameObject Axe_PlaceHolder;
     
 
     float lastVelocity = 1;
@@ -325,9 +325,10 @@ public class PlayerMovement : MonoBehaviour
     {
        if (collision.CompareTag("Water"))
        {
-             {
-                PlayerAnimator.SetBool("isSwimming", true);
-            }
+            PlayerAnimator.SetBool("isSwimming", true);
+
+            //set raycast to true underwater
+            useRayCastJumping = true;
         
        }
     }
@@ -337,9 +338,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.gameObject.tag == "Water")
         {
-             {
-                PlayerAnimator.SetBool("isSwimming", false);
-            }
+        
+            PlayerAnimator.SetBool("isSwimming", false);
+            useRayCastJumping = false;
+            canJump = true;
 
         }
     
