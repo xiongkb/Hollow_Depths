@@ -17,8 +17,8 @@ public class StayDeactivated : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            //displayed.SetActive(false);
-            Destroy(gameObject);
+            displayed.SetActive(false);
+           // Destroy(gameObject);
             
         }
     }
