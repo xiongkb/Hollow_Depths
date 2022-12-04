@@ -8060,7 +8060,6 @@ MonoBehaviour:
   numberOfJumps: 1
   fallMultiplier: 2.5
   isFlipped: 0
-  isSwimming: 0
   isMultiDirectional: 0
   isAudioEnabled: 1
   disabled: 0
@@ -21268,7 +21267,7 @@ GameObject:
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &855562020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21969,7 +21968,7 @@ MonoBehaviour:
   pointA: {fileID: 1958958251}
   pointB: {fileID: 2075885840}
   isRight: 1
-  speed: 0.001
+  speed: 0.01
 --- !u!61 &888262361
 BoxCollider2D:
   m_ObjectHideFlags: 0

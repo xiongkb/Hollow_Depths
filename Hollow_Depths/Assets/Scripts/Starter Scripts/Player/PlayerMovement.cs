@@ -33,8 +33,9 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("This means that you're 1D character is facing left by default (1D means you only face left or right)")]
     public bool isFlipped = false;
 //Added isSwimming
-    [Tooltip("If you want player to swim underwater")]
-    public bool isSwimming = false;
+  //  [Tooltip("If you want player to swim underwater")]
+  //  public bool isSwimming = false;
+    private bool isSwimming = false;
 
     [Tooltip("This should be checked if your character has Multi-Directional movement (IE up, down, left, right) and your animator is set up accordingly")]
     public bool isMultiDirectional = false;
@@ -154,21 +155,22 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 //added swimming Handle
-     private void HandleSwimming(float HorizontalMovement, float VerticleMovement)
+   // private void HandleSwimming(float HorizontalMovement, float VerticleMovement)
+    void HandleSwimming()
     {
-        bool SwimmingInputDetected = (HorizontalMovement != 0 || VerticleMovement != 0);
-        if (SwimmingInputDetected)
+        if (!isSwimming)
         {
             PlayerAnimator.SetBool("isSwimming", true);
+            Debug.Log("Is Swimming");
         }
         else
         {
             PlayerAnimator.SetBool("isSwimming", false);
         }
 
-        HandleAttackAnimation(HorizontalMovement, VerticleMovement);
+      //  HandleAttackAnimation(HorizontalMovement, VerticleMovement);
     }
-//
+// 
     private void HandleAnimations1D(float HorizontalMovement, float VerticleMovement)
     {
         bool MovementInputDetected = (HorizontalMovement != 0 || VerticleMovement != 0);
@@ -325,7 +327,8 @@ public class PlayerMovement : MonoBehaviour
     {
        if (collision.CompareTag("Water"))
        {
-            PlayerAnimator.SetBool("isSwimming", true);
+           // PlayerAnimator.SetBool("isSwimming", true);
+           HandleSwimming();
 
             //set raycast to true underwater
             useRayCastJumping = true;
@@ -339,7 +342,8 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "Water")
         {
         
-            PlayerAnimator.SetBool("isSwimming", false);
+         //   PlayerAnimator.SetBool("isSwimming", false);
+            HandleSwimming();
             useRayCastJumping = false;
             canJump = true;
 
