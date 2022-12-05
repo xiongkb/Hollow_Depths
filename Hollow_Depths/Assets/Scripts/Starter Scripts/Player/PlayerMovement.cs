@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
     private bool canRayCastJump = false;
 
     private GameObject Axe_PlaceHolder;
-    
+    private bool isUnderWater = false;
 
     float lastVelocity = 1;
 
@@ -156,30 +156,43 @@ public class PlayerMovement : MonoBehaviour
     }
 //added swimming Handle
    // private void HandleSwimming(float HorizontalMovement, float VerticleMovement)
-    void HandleSwimming()
-    {
-        if (!isSwimming)
-        {
-            PlayerAnimator.SetBool("isSwimming", true);
-            Debug.Log("Is Swimming");
-        }
-        else
-        {
-            PlayerAnimator.SetBool("isSwimming", false);
-        }
+    // void HandleSwimming()
+    // {
+    //     if (!isSwimming)
+    //     {
+    //         PlayerAnimator.SetBool("isSwimming", true);
+    //         Debug.Log("Is Swimming");
+    //     }
+    //     else
+    //     {
+    //         PlayerAnimator.SetBool("isSwimming", false);
+    //     }
 
-      //  HandleAttackAnimation(HorizontalMovement, VerticleMovement);
-    }
+    //   //  HandleAttackAnimation(HorizontalMovement, VerticleMovement);
+    // }
 // 
     private void HandleAnimations1D(float HorizontalMovement, float VerticleMovement)
     {
         bool MovementInputDetected = (HorizontalMovement != 0 || VerticleMovement != 0);
-        if (MovementInputDetected)
+        // if (MovementInputDetected)
+        // {
+        //     PlayerAnimator.SetBool("isMoving", true);
+        // }
+        // else
+        // {
+        //     PlayerAnimator.SetBool("isMoving", false);
+        // }
+        if(MovementInputDetected && !isUnderWater)
         {
             PlayerAnimator.SetBool("isMoving", true);
         }
+        else if(MovementInputDetected && isUnderWater)
+        {
+            PlayerAnimator.SetBool("isSwimming", true);
+        }
         else
         {
+            PlayerAnimator.SetBool("isSwimming", false);
             PlayerAnimator.SetBool("isMoving", false);
         }
 
@@ -328,8 +341,8 @@ public class PlayerMovement : MonoBehaviour
        if (collision.CompareTag("Water"))
        {
            // PlayerAnimator.SetBool("isSwimming", true);
-           HandleSwimming();
-
+         //  HandleSwimming();
+            isUnderWater = true;
             //set raycast to true underwater
             useRayCastJumping = true;
         
@@ -343,7 +356,8 @@ public class PlayerMovement : MonoBehaviour
         {
         
          //   PlayerAnimator.SetBool("isSwimming", false);
-            HandleSwimming();
+          //  HandleSwimming();
+          isUnderWater = true;
             useRayCastJumping = false;
             canJump = true;
 
