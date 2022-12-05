@@ -1895,7 +1895,6 @@ GameObject:
   - component: {fileID: 149335910}
   - component: {fileID: 149335911}
   - component: {fileID: 149335912}
-  - component: {fileID: 149335913}
   m_Layer: 0
   m_Name: Stairs_Teleporter 3 exit 2nd floor
   m_TagString: Untagged
@@ -2003,23 +2002,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 149335908}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd3d6eff3d1e1846b6009ccbd6ac7f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sp1: {fileID: 149335908}
-  sp2: {fileID: 0}
---- !u!114 &149335913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 149335908}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 420a2ca664ca3f345bc17b6d7d48034a, type: 3}
+  m_Script: {fileID: 11500000, guid: 72e177793cf0c084793aec5312bd3d34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   levelIndex: 3
@@ -45805,7 +45790,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1632914408}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 64, y: 12.2, z: -2}
+  m_LocalPosition: {x: 63.97, y: 12.2, z: -2}
   m_LocalScale: {x: 0.8, y: 0.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
