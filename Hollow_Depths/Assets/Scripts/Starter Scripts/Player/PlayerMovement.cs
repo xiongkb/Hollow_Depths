@@ -192,7 +192,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-           // PlayerAnimator.SetBool("isSwimming", false);
+            PlayerAnimator.SetBool("isSwimming", false);
             PlayerAnimator.SetBool("isMoving", false);
         }
 
@@ -220,7 +220,6 @@ public class PlayerMovement : MonoBehaviour
                 if (playerAttack != null)
                 {
                     playerAttack.Attack(transform.localScale);
-                    //Debug.Log("attking rn");
                 }
             }
             else
@@ -228,7 +227,6 @@ public class PlayerMovement : MonoBehaviour
                 if (playerAttack != null)
                 {
                     playerAttack.Attack(transform.localScale);
-                   // Debug.Log("NOT attking rn");
                 }
             }
         }
@@ -239,11 +237,6 @@ public class PlayerMovement : MonoBehaviour
             if (playerAttack != null)
             {
                 playerAttack.StopAttack();
-            }
-            if(isUnderWater) {
-                useRayCastJumping = true;
-            }else{
-                useRayCastJumping = false;
             }
             
 
@@ -363,7 +356,7 @@ public class PlayerMovement : MonoBehaviour
         {
          //   PlayerAnimator.SetBool("isSwimming", false);
           //  HandleSwimming();
-          isUnderWater = false;
+            isUnderWater = false;
             useRayCastJumping = false;
             canJump = true;
             Debug.Log("Leaving Under the Water");
