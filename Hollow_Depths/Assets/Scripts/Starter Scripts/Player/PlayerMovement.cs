@@ -220,7 +220,7 @@ public class PlayerMovement : MonoBehaviour
                 if (playerAttack != null)
                 {
                     playerAttack.Attack(transform.localScale);
-                    Debug.Log("attking rn");
+                    //Debug.Log("attking rn");
                 }
             }
             else
@@ -359,12 +359,11 @@ public class PlayerMovement : MonoBehaviour
     //Kang Swim exit when Nami is out of the water collision area to reset mack to regular movment
     private void OnTriggerExit2D(Collider2D collision) {
 
-        if (collision.gameObject.tag == "Water")
+        if (collision.gameObject.tag == "Water" && isJumping)
         {
-        
          //   PlayerAnimator.SetBool("isSwimming", false);
           //  HandleSwimming();
-          isUnderWater = true;
+          isUnderWater = false;
             useRayCastJumping = false;
             canJump = true;
             Debug.Log("Leaving Under the Water");
