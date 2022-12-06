@@ -15,11 +15,11 @@ public class Teleporter : MonoBehaviour {
     {
         if (trig != null)
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
+            //if (Input.GetKeyDown(KeyCode.E))
+            //{
                 trig.gameObject.transform.position = sp2.gameObject.transform.position;
 
-            }
+            //}
         }
     }
 

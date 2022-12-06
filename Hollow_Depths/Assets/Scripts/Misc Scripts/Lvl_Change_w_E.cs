@@ -34,8 +34,8 @@ public class Lvl_Change_w_E : MonoBehaviour
     {
         if (trig != null)
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
+            //if (Input.GetKeyDown(KeyCode.E))
+            //{
                 if (useGameSceneManager)
                 {
                     GameObject.FindGameObjectWithTag("SceneManager").GetComponent<GameSceneManager>().LoadScene(levelIndex);
@@ -45,7 +45,7 @@ public class Lvl_Change_w_E : MonoBehaviour
                     SceneManager.LoadScene(levelIndex);
                 }
 
-            }
+            //}
         }
     }
 
