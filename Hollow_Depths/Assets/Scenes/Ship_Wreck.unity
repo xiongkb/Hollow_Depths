@@ -22540,7 +22540,7 @@ MonoBehaviour:
   pointA: {fileID: 1958958251}
   pointB: {fileID: 2075885840}
   isRight: 1
-  speed: 0.003
+  speed: 0.002
 --- !u!61 &888262361
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -64106,7 +64106,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 972679459188180326, guid: 3ccfc0f7214df39418260ec20a53bdf8, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 972679459188180326, guid: 3ccfc0f7214df39418260ec20a53bdf8, type: 3}
       propertyPath: m_SortingLayerID
@@ -64114,7 +64114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6657733092264484970, guid: 3ccfc0f7214df39418260ec20a53bdf8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6657733093170356424, guid: 3ccfc0f7214df39418260ec20a53bdf8, type: 3}
       propertyPath: m_RootOrder
