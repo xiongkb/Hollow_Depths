@@ -186,7 +186,7 @@ MonoBehaviour:
     Swim Animation by
     Samiyyah Rucker
 
-    Attack Unlock by Kang Xiong'
+    Attack, Swim System by Kang Xiong'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -877,7 +877,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -708, y: 63}
+  m_AnchoredPosition: {x: -708, y: 69}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &520492407
@@ -1659,9 +1659,6 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Melanie Cole, Destiny Nieves, Samiyyah Rucker, Kang Xiong
 
-    stock.adobe.com
-
-    vectorstock.com
 
 '
   m_isRightToLeft: 0
@@ -1900,13 +1897,12 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Mary for help with Oxygen Tank scripting
 
-    Eric H. for debugging and
-    technical issues
+    Eric H. for technical assistance
 
-    DIG3713 for providing scripts
+    DIG3713
+    for providing scripts
 
-    Friends and Family who
-    helped with play testing'
+    Friends and Family who helped with play testing'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3016,7 +3012,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -708, y: -50}
+  m_AnchoredPosition: {x: -708, y: -43}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1856791424
