@@ -31,10 +31,11 @@ public class Player_Oxygen_Segmented : MonoBehaviour {
 
 
     public IEnumerator OxygenCounter() {
-        while (Player.GetComponent<Player_Health_Segmented>().CurrentHealth > 0) {
+        while (Player.GetComponent<Player_Health_Segmented>().CurrentHealth > 0){
         if (InitialOxygen) { InitialOxygen = false; }
             else {
-                --currentOxygen;
+               
+                    --currentOxygen;
 
                 if (currentOxygen == 3)
                 {
@@ -132,6 +133,12 @@ public class Player_Oxygen_Segmented : MonoBehaviour {
                     oxygen2.SetActive(true);
 
                 }
+                else if (currentOxygen == 1)
+                {
+                    ++currentOxygen;
+                    oxygen2.SetActive(true);
+                }
+
                 else
                 {
 
