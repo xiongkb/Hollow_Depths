@@ -185,10 +185,12 @@ public class PlayerMovement : MonoBehaviour
         if(MovementInputDetected && !isUnderWater)
         {
             PlayerAnimator.SetBool("isMoving", true);
+            PlayerAnimator.SetBool("isSwimming", false);
         }
         else if(MovementInputDetected && isUnderWater)
         {
             PlayerAnimator.SetBool("isSwimming", true);
+            PlayerAnimator.SetBool("isMoving", false);
         }
         else
         {
