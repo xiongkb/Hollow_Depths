@@ -1746,7 +1746,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 134306077}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.12, y: -1.18, z: 0}
+  m_LocalPosition: {x: 0.71, y: -1.19, z: 0}
   m_LocalScale: {x: 1.2375001, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22917,6 +22917,7 @@ GameObject:
   - component: {fileID: 971141084}
   - component: {fileID: 971141083}
   - component: {fileID: 971141087}
+  - component: {fileID: 971141088}
   m_Layer: 0
   m_Name: Axe_PlaceHolder
   m_TagString: Collection
@@ -23051,6 +23052,19 @@ MonoBehaviour:
   keyID: 0
   useKeyName: 1
   useKeyID: 1
+--- !u!114 &971141088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971141081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c24043e5d229a54c9349110b1ae46bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chirp: {fileID: 8300000, guid: 387987cdcac4f144aa2c02ca03db3f3b, type: 3}
 --- !u!1 &979227213
 GameObject:
   m_ObjectHideFlags: 0
@@ -32624,7 +32638,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1441606944}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.4, y: 0.78, z: -0.96802896}
+  m_LocalPosition: {x: 1.43, y: 1.31, z: -0.96802896}
   m_LocalScale: {x: 0.5708262, y: 0.5561277, z: 0.5610085}
   m_ConstrainProportionsScale: 0
   m_Children: []
