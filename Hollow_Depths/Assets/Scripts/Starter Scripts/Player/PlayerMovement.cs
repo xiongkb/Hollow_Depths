@@ -344,6 +344,7 @@ public class PlayerMovement : MonoBehaviour
             isUnderWater = true;
             //set raycast to true underwater
             useRayCastJumping = true;
+            jumpForce = 10f;
             Debug.Log("Entering Under the Water");
         
        }
@@ -359,6 +360,7 @@ public class PlayerMovement : MonoBehaviour
             isUnderWater = false;
             useRayCastJumping = false;
             canJump = true;
+            jumpForce = 6f;
             Debug.Log("Leaving Under the Water");
         }
     
