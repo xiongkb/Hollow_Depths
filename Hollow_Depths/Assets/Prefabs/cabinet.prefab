@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4173863909082087250}
   - component: {fileID: 4173863909082087251}
-  - component: {fileID: 7856528000606930553}
+  - component: {fileID: 4173863909082087244}
   m_Layer: 8
   m_Name: cabinet
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7856528000606930553
+--- !u!61 &4173863909082087244
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,7 +94,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 4173863909082087245}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: d0622f93e3947e14780347fca4817ebe, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
