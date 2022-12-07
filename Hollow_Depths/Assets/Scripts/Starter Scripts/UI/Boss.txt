@@ -1,3 +1,3 @@
-[NAME=Nami][SPEAKERSPRITE=Nami]I finally made it out here.
+[NAME=Nami][SPEAKERSPRITE=Nami]I finally made it up here.
 [NAME=Nami][SPEAKERSPRITE=Nami]I know there's a life boat on the other side.
-[NAME=Nami][SPEAKERSPRITE=Nami]If I can find the key, I can get out of here!
+[NAME=Nami][SPEAKERSPRITE=Nami]If I can find the boat's key, I can use it to get out of here!
