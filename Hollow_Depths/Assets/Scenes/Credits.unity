@@ -1760,7 +1760,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: freesounds.org
+  m_text: 'freesounds.org
+
+    Chopping and glass break sound effect by Kang Xiong'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2349,14 +2351,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Mary for help with Oxygen Tank scripting
+  m_text: 'Mary K. for help with Oxygen Tank scripting
 
-    Eric H. for technical assistance
+    Eric H. for technical
+    assistance
 
-    DIG3713
-    for providing scripts
+    DIG3713 for providing scripts
 
-    Friends and Family who helped with play testing'
+    Prof. Faris and Prof. Heitzman
+
+    Friends
+    and Family who helped with play testing'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
