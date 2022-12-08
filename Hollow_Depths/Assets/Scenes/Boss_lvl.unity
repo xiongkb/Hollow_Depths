@@ -1187,6 +1187,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: broken shelf (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5291468403848764221, guid: 2ad770eb8706b2746a786dcd3e4b7bda, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: d0622f93e3947e14780347fca4817ebe, type: 2}
     - target: {fileID: 8287800210558302928, guid: 2ad770eb8706b2746a786dcd3e4b7bda, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -3006,6 +3010,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform_Seaweed
       objectReference: {fileID: 0}
+    - target: {fileID: 7835575266891181827, guid: f9800d97e6c8a1e4ca502ada77c222a5, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: d0622f93e3947e14780347fca4817ebe, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9800d97e6c8a1e4ca502ada77c222a5, type: 3}
 --- !u!1 &403453768
@@ -3434,6 +3442,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: broken shelf
       objectReference: {fileID: 0}
+    - target: {fileID: 5291468403848764221, guid: 2ad770eb8706b2746a786dcd3e4b7bda, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: d0622f93e3947e14780347fca4817ebe, type: 2}
     - target: {fileID: 8287800210558302928, guid: 2ad770eb8706b2746a786dcd3e4b7bda, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -4247,11 +4259,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6789072896972491378, guid: 6ab7f6b1c23dc6840a420a3607d2a21c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.04
+      value: 32.51
       objectReference: {fileID: 0}
     - target: {fileID: 6789072896972491378, guid: 6ab7f6b1c23dc6840a420a3607d2a21c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.23
+      value: 18.5
       objectReference: {fileID: 0}
     - target: {fileID: 6789072896972491378, guid: 6ab7f6b1c23dc6840a420a3607d2a21c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6031,6 +6043,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: broken shelf
       objectReference: {fileID: 0}
+    - target: {fileID: 5291468403848764221, guid: 2ad770eb8706b2746a786dcd3e4b7bda, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: d0622f93e3947e14780347fca4817ebe, type: 2}
     - target: {fileID: 8287800210558302928, guid: 2ad770eb8706b2746a786dcd3e4b7bda, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -7112,6 +7128,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: broken shelf (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5291468403848764221, guid: 2ad770eb8706b2746a786dcd3e4b7bda, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: d0622f93e3947e14780347fca4817ebe, type: 2}
     - target: {fileID: 8287800210558302928, guid: 2ad770eb8706b2746a786dcd3e4b7bda, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -19470,6 +19490,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4173863909082087244, guid: 13a56b5929bb88b42864c6ec0000c3ac, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: d0622f93e3947e14780347fca4817ebe, type: 2}
     - target: {fileID: 4173863909082087245, guid: 13a56b5929bb88b42864c6ec0000c3ac, type: 3}
       propertyPath: m_Name
       value: cabinet
@@ -24949,6 +24973,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4173863909082087244, guid: 13a56b5929bb88b42864c6ec0000c3ac, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: d0622f93e3947e14780347fca4817ebe, type: 2}
     - target: {fileID: 4173863909082087245, guid: 13a56b5929bb88b42864c6ec0000c3ac, type: 3}
       propertyPath: m_Name
       value: cabinet (1)
@@ -26007,6 +26035,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: broken shelf (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5291468403848764221, guid: 2ad770eb8706b2746a786dcd3e4b7bda, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: d0622f93e3947e14780347fca4817ebe, type: 2}
     - target: {fileID: 8287800210558302928, guid: 2ad770eb8706b2746a786dcd3e4b7bda, type: 3}
       propertyPath: m_RootOrder
       value: 13
