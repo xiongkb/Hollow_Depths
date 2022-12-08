@@ -22287,7 +22287,7 @@ MonoBehaviour:
   pointA: {fileID: 1958958251}
   pointB: {fileID: 2075885840}
   isRight: 1
-  speed: 0.2
+  speed: 0.07
 --- !u!61 &888262361
 BoxCollider2D:
   m_ObjectHideFlags: 0
