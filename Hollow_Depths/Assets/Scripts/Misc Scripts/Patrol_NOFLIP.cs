@@ -22,7 +22,7 @@ public class Patrol_NOFLIP : MonoBehaviour {
         Vector3 thisPosition = new Vector3(transform.position.x, 0, 0);
         if (isRight)
         {
-            transform.position = Vector3.MoveTowards(transform.position, pointB.position, speed);
+            transform.position = Vector3.MoveTowards(transform.position, pointB.position, (speed * Time.deltaTime));
             if (thisPosition.Equals(pointBPosition))
             {
                 //Debug.Log ("Position b");
@@ -32,7 +32,7 @@ public class Patrol_NOFLIP : MonoBehaviour {
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, pointA.position, speed);
+            transform.position = Vector3.MoveTowards(transform.position, pointA.position, (speed * Time.deltaTime));
             if (thisPosition.Equals(pointAPosition))
             {
                 //Debug.Log ("Position a");
