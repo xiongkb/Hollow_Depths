@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 856828757947264810}
   - component: {fileID: 856828757947264821}
-  - component: {fileID: 8221921743390164144}
+  - component: {fileID: 795441761362815223}
   m_Layer: 8
   m_Name: Platform_Shelf
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8221921743390164144
+--- !u!61 &795441761362815223
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
