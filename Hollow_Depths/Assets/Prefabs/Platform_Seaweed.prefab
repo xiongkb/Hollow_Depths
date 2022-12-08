@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4192825949449258409}
   - component: {fileID: 4192825949449258422}
-  - component: {fileID: 7835575266891181827}
+  - component: {fileID: 8707518640103149726}
   m_Layer: 8
   m_Name: Platform_Seaweed
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7835575266891181827
+--- !u!61 &8707518640103149726
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
