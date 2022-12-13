@@ -187,9 +187,9 @@ TextureImporter:
         y: 1649
         width: 1323
         height: 1314
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      alignment: 9
+      pivot: {x: 0.46993738, y: 0.46108335}
+      border: {x: 0, y: 0, z: 54, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -204,12 +204,12 @@ TextureImporter:
       name: Starr Screen Buttons_4
       rect:
         serializedVersion: 2
-        x: 1678
+        x: 1616
         y: 1653
-        width: 1191
-        height: 1200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 1268
+        height: 1194
+      alignment: 9
+      pivot: {x: 0.48091727, y: 0.50473493}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
